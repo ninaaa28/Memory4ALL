@@ -31,6 +31,6 @@ public class Karten {
 		this.bild_v = bild_v;
 	}
 
-	//Test Kevin123
+	
 	
 }
