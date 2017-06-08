@@ -115,67 +115,70 @@ public class Hauptmenue {
 		spieler.setBackground(Color.cyan);
 
 		// Bilder für das Dropdowns
-		ImageIcon schiggieinfügen = new ImageIcon("C:/Users/k-sch/Pictures/Memory/001-squirtle.png");
+		String path = System.getProperty("user.dir")+"\\src\\memory\\Bilder\\";
+		
+		ImageIcon schiggieinfügen = new ImageIcon(path+"001-squirtle.png");
 		Image schiggigetter = schiggieinfügen.getImage();
 		Image schiggiresize = schiggigetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon schiggi = new ImageIcon(schiggiresize);
 
-		ImageIcon glumandereinfügen =  new ImageIcon ("/memory/memory.Bilder/002-bullbasaur.png");
+		
+		ImageIcon glumandereinfügen =  new ImageIcon (path+"002-bullbasaur.png");
 		Image glumandergetter = glumandereinfügen.getImage();
 		Image glumanderresize = glumandergetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon glumander = new ImageIcon(glumanderresize);
 
-		ImageIcon bisasameinfügen = new ImageIcon("memory.Bilder.002-bullbasaur.png");
+		ImageIcon bisasameinfügen = new ImageIcon(path+"002-bullbasaur.png");
 		Image bisasamgetter = bisasameinfügen.getImage();
 		Image bisasamresize = bisasamgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon bisasam = new ImageIcon(bisasamresize);
 
-		ImageIcon relaxoeinfügen = new ImageIcon("memory.Bilder.004-snorlax.png");
+		ImageIcon relaxoeinfügen = new ImageIcon(path+"004-snorlax.png");
 		Image relaxogetter = relaxoeinfügen.getImage();
 		Image relaxoresize = relaxogetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon relaxo = new ImageIcon(relaxoresize);
 
-		ImageIcon pikachueinfügen = new ImageIcon("memory.Bilder.005-pikachu.png");
+		ImageIcon pikachueinfügen = new ImageIcon(path+"005-pikachu.png");
 		Image pikachugetter = pikachueinfügen.getImage();
 		Image pikachuresize = pikachugetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon pikachu = new ImageIcon(pikachuresize);
 
-		ImageIcon mauzieinfügen = new ImageIcon("memory.Bilder.006-avatar.png");
+		ImageIcon mauzieinfügen = new ImageIcon(path+"006-avatar.png");
 		Image mauzigetter = mauzieinfügen.getImage();
 		Image mauziresize = mauzigetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon mauzi = new ImageIcon(mauziresize);
 
-		ImageIcon monkeyeinfügen = new ImageIcon("memory.Bilder.007-mankey.png");
+		ImageIcon monkeyeinfügen = new ImageIcon(path+"007-mankey.png");
 		Image monkeygetter = monkeyeinfügen.getImage();
 		Image monkeyresize = monkeygetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon monkey = new ImageIcon(monkeyresize);
 
-		ImageIcon venomateinfügen = new ImageIcon("memory.Bilder.008.venomat.png");
+		ImageIcon venomateinfügen = new ImageIcon(path+"008.venomat.png");
 		Image venomatgetter = venomateinfügen.getImage();
 		Image venomatresize = venomatgetter.getScaledInstance(90, 90, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon venomat = new ImageIcon(venomatresize);
 
-		ImageIcon ratfratzeinfügen = new ImageIcon("memory.Bilder.009-rattata.png");
+		ImageIcon ratfratzeinfügen = new ImageIcon(path+"009-rattata.png");
 		Image ratfratzgetter = ratfratzeinfügen.getImage();
 		Image ratfratzresize = ratfratzgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon ratfratz = new ImageIcon(ratfratzresize);
 
-		ImageIcon taubsieinfügen = new ImageIcon("memory.Bilder.010-pidgey.png");
+		ImageIcon taubsieinfügen = new ImageIcon(path+"010-pidgey.png");
 		Image taubsigetter = taubsieinfügen.getImage();
 		Image taubsiresize = taubsigetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon taubsi = new ImageIcon(taubsiresize);
 
-		ImageIcon meweinfügen = new ImageIcon("memory.Bilder.001-sqirtle.png");
+		ImageIcon meweinfügen = new ImageIcon(path+"011-sqirtle.png");
 		Image mewgetter = meweinfügen.getImage();
 		Image mewresize = mewgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon mew = new ImageIcon(mewresize);
 
-		ImageIcon evolieinfügen = new ImageIcon("memory.Bilder.012-eevee.png");
+		ImageIcon evolieinfügen = new ImageIcon(path+"012-eevee.png");
 		Image evoligetter = evolieinfügen.getImage();
 		Image evoliresize = evoligetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon evoli = new ImageIcon(evoliresize);
 
-		ImageIcon puffeinfügen = new ImageIcon("memory.Bilder.013-jigglypuff.png");
+		ImageIcon puffeinfügen = new ImageIcon(path+"013-jigglypuff.png");
 		Image puffgetter = puffeinfügen.getImage();
 		Image puffresize = puffgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon puff = new ImageIcon(puffresize);
