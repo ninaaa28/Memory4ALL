@@ -8,7 +8,7 @@ import javax.swing.border.Border;
 public class Hauptmenue {
 	public static void main(String[] args) {
 
-		JFrame hauptmenue = new JFrame("HauptmenÃ¼");
+		JFrame hauptmenue = new JFrame("Hauptmenü");
 		hauptmenue.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		hauptmenue.setLayout(new BorderLayout());
 
