@@ -4,8 +4,6 @@ import java.awt.*;
 
 import javax.swing.*;
 
-import Test.Spielscreen;
-
 public class Spielscreen extends JFrame {
 	
 	private JFrame Memory;
@@ -159,7 +157,5 @@ public Spielscreen (){
 	 
 		new Spielscreen();
 	}
-
-
 
 }
