@@ -38,9 +38,12 @@ public Spielscreen (){
 	m.add(m1);
 	m.add(m2);
 	m.setBackground(Color.lightGray);
+	
+	// Pfadhilfe fuer die Bilder
+	String path = System.getProperty("user.dir")+"\\src\\memory\\Bilder\\";
 
 	// Bilderfassung Spieler 1
-	ImageIcon schiggieinfuegen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/001-squirtle.png");
+	ImageIcon schiggieinfuegen = new ImageIcon(path+"001-squirtle.png");
 	Image schiggigetter = schiggieinfuegen.getImage();
 	Image schiggiresize = schiggigetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 	ImageIcon schiggi = new ImageIcon(schiggiresize);
@@ -61,7 +64,7 @@ public Spielscreen (){
 	spieler3.setBackground(Color.cyan);
 
 	// Bilderfassung Spieler 3
-	ImageIcon glumandereinfuegen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/003-charmander.png");
+	ImageIcon glumandereinfuegen = new ImageIcon(path+"003-charmander.png");
 	Image glumandergetter = glumandereinfuegen.getImage();
 	Image glumanderresize = glumandergetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 	ImageIcon glumander = new ImageIcon(glumanderresize);
@@ -89,7 +92,7 @@ public Spielscreen (){
 	spieler2.setBackground(Color.green);
 
 	// Bilderfassung Spieler 2
-	ImageIcon bisasameinfuegen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/002-bullbasaur.png");
+	ImageIcon bisasameinfuegen = new ImageIcon(path+"002-bullbasaur.png");
 	Image bisasamgetter = bisasameinfuegen.getImage();
 	Image bisasamresize = bisasamgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 	ImageIcon bisasam = new ImageIcon(bisasamresize);
@@ -97,7 +100,7 @@ public Spielscreen (){
 	bisasambild.setBackground(Color.green);
 
 	// Bilderfassung Spieler 4
-	ImageIcon pikachueinfuegen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/005-pikachu.png");
+	ImageIcon pikachueinfuegen = new ImageIcon(path+"005-pikachu.png");
 	Image pikachugetter = pikachueinfuegen.getImage();
 	Image pikachuresize = pikachugetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 	ImageIcon pikachu = new ImageIcon(pikachuresize);

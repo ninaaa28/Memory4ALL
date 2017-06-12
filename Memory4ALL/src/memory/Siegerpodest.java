@@ -4,6 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Siegerpodest {
+	
+	
 	public static void main(String[] args) {
 
 		JFrame podest = new JFrame("Siegerpodest");
