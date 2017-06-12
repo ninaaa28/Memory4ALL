@@ -28,26 +28,26 @@ public class Siegerpodest {
 		m.setBackground(Color.lightGray);
 
 		// Bildbearbeitung des Podest
-		ImageIcon schiggieinfügen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/001-squirtle.png");
-		Image schiggigetter = schiggieinfügen.getImage();
+		ImageIcon schiggieinfuegen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/001-squirtle.png");
+		Image schiggigetter = schiggieinfuegen.getImage();
 		Image schiggiresize = schiggigetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon schiggi = new ImageIcon(schiggiresize);
 		JLabel schiggibild = new JLabel(schiggi);
 
-		ImageIcon glumandereinfügen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/003-charmander.png");
-		Image glumandergetter = glumandereinfügen.getImage();
+		ImageIcon glumandereinfuegen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/003-charmander.png");
+		Image glumandergetter = glumandereinfuegen.getImage();
 		Image glumanderresize = glumandergetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon glumander = new ImageIcon(glumanderresize);
 		JLabel glumanderbild = new JLabel(glumander);
 
-		ImageIcon bisasameinfügen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/002-bullbasaur.png");
-		Image bisasamgetter = bisasameinfügen.getImage();
+		ImageIcon bisasameinfuegen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/002-bullbasaur.png");
+		Image bisasamgetter = bisasameinfuegen.getImage();
 		Image bisasamresize = bisasamgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon bisasam = new ImageIcon(bisasamresize);
 		JLabel bisasambild = new JLabel(bisasam);
 
-		ImageIcon podestpiceinfügen = new ImageIcon("/Memory4ALL/src/memory/Podest.PNG");
-		Image podestpicgetter = podestpiceinfügen.getImage();
+		ImageIcon podestpiceinfuegen = new ImageIcon("/Memory4ALL/src/memory/Podest.PNG");
+		Image podestpicgetter = podestpiceinfuegen.getImage();
 		Image podestpicresize = podestpicgetter.getScaledInstance(900, 650, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon podestpic = new ImageIcon(podestpicresize);
 		JLabel podestbild = new JLabel(podestpic);
