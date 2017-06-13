@@ -21,7 +21,7 @@ public class Siegerpodest extends JFrame {
 		// Menueelemente fuer den oberen Rand
 		m1 = new JMenu("Anleitung");
 		m1.add("Ansehen");
-		m1.add("Punkte erg√§nzen");
+		m1.add("Punkte erg‰nzen");
 		m1.setBackground(Color.lightGray);
 
 		m2 = new JMenu("Impressum");
