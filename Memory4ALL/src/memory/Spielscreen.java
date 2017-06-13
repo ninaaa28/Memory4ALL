@@ -3,14 +3,17 @@ package memory;
 import java.awt.*;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 
 public class Spielscreen extends JFrame {
 	
 	private JFrame Memory;
 	private JMenu m1, m2;
 	private JMenuBar m;
-	private JPanel spieler1, spieler2, spieler3, spieler4, spielerleiste13, spielerleiste24, buttons;
+	private JPanel spieler1, spieler2, spieler3, spieler4, spielerleiste13, spielerleiste24, buttons, spielfeld;
 	private JButton ngame, rgame, close;
+	private int anzahlKarten=0;
+	
 	
 	
 public Spielscreen (){
@@ -18,7 +21,7 @@ public Spielscreen (){
 	// Initialisierung des Screens
 	super ("Memory");
 	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-	setLayout(new BorderLayout());
+	getContentPane().setLayout(new BorderLayout());
 
 	// Menueelemente fuer den oberen Rand
 	m1 = new JMenu("Anleitung");
@@ -51,14 +54,14 @@ public Spielscreen (){
 	spieler1 = new JPanel(new GridLayout(3, 1));
 	spieler1.add(new JLabel("Spieler 1"));
 	spieler1.add(new JLabel("Zeit: 12:00"));
-	spieler1.add(new Label("Spielzüge:25"));
+	spieler1.add(new Label("Spielzï¿½ge:25"));
 	spieler1.setBackground(Color.red);
 
 	// Spielerinformationen Spieler 3
 	spieler3 = new JPanel(new GridLayout(3, 1));
 	spieler3.add(new JLabel("Spieler 3"));
 	spieler3.add(new JLabel("Zeit: 13:00"));
-	spieler3.add(new Label("Spielzüge:24"));
+	spieler3.add(new Label("Spielzï¿½ge:24"));
 	spieler3.setBackground(Color.cyan);
 
 	// Bilderfassung Spieler 3
@@ -81,12 +84,23 @@ public Spielscreen (){
 	Image tischresize = tischgetter.getScaledInstance(900, 650, java.awt.Image.SCALE_SMOOTH);
 	ImageIcon tisch = new ImageIcon(tischresize);
 	JLabel tischbild = new JLabel(tisch);
+	spielfeld= new JPanel();
+	spielfeld.setLayout(new GridLayout(8,8));
+	
+	//HinzufÃ¼gen der Karten Ã¼ber eine Schleife
+	
+	anzahlKarten = 32;
+	for(int i=0; i<anzahlKarten;i++){
+		JButton spielKarten = new JButton("karte"+i);
+		spielfeld.add(spielKarten);
+	}
+	
 
 	// Spielerinformation Spieler 2
 	spieler2 = new JPanel(new GridLayout(3, 1));
 	spieler2.add(new JLabel("Spieler 2"));
 	spieler2.add(new JLabel("Zeit: 12:30"));
-	spieler2.add(new Label("Spielzüge:25"));
+	spieler2.add(new Label("Spielzï¿½ge:25"));
 	spieler2.setBackground(Color.green);
 
 	// Bilderfassung Spieler 2
@@ -109,7 +123,7 @@ public Spielscreen (){
 	spieler4 = new JPanel(new GridLayout(3, 1));
 	spieler4.add(new JLabel("Spieler 4"));
 	spieler4.add(new JLabel("Zeit: 15:00"));
-	spieler4.add(new Label("Spielzüge:24"));
+	spieler4.add(new Label("Spielzï¿½ge:24"));
 	spieler4.setBackground(Color.yellow);
 
 	// Zusammenfassung Spieler 2,4
@@ -128,7 +142,7 @@ public Spielscreen (){
 	rgame.setBackground(Color.green);
 	rgame.setFont(new Font("MS Gothic", Font.BOLD, 20));
 
-	close = new JButton("Anwendung schließen");
+	close = new JButton("Anwendung schlieï¿½en");
 	close.setBackground(Color.red);
 	close.setFont(new Font("MS Gothic", Font.BOLD, 20));
 
@@ -139,11 +153,12 @@ public Spielscreen (){
 	buttons.add(rgame);
 
 	// Layout fuer das Frame
-	add(m, BorderLayout.NORTH);
-	add(spielerleiste13, BorderLayout.WEST);
-	add(tischbild, BorderLayout.CENTER);
-	add(spielerleiste24, BorderLayout.EAST);
-	add(buttons, BorderLayout.SOUTH);
+	getContentPane().add(m, BorderLayout.NORTH);
+	getContentPane().add(spielerleiste13, BorderLayout.WEST);
+	getContentPane().add(spielfeld, BorderLayout.CENTER);
+	
+	getContentPane().add(spielerleiste24, BorderLayout.EAST);
+	getContentPane().add(buttons, BorderLayout.SOUTH);
 
 	// Weitere Konfigurationen fuer das Frame
 	setVisible(true);
