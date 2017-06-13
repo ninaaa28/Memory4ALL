@@ -1,6 +1,8 @@
 package memory;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -9,16 +11,6 @@ import javax.swing.border.Border;
 
 public class Hauptmenue extends JFrame {
 	
-	private ItemListener spieler1textfeld = new ItemListener() {
-		@Override
-		public void itemStateChanged (ItemEvent e) {
-			if (s1.isSelected())
-				name1.setEditable(true);
-			else {
-				name1.setEditable(false);
-			}
-		}
-	};
 	private ItemListener spieler2textfeld = new ItemListener() {
 		@Override
 		public void itemStateChanged (ItemEvent e) {
@@ -51,12 +43,31 @@ public class Hauptmenue extends JFrame {
 		}
 	};
 	
+	private ActionListener resettip = new ActionListener (){
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String cmd = e.getActionCommand();
+			if (cmd.equals(reset))
+			s1.setSelected(false);
+			s2.setSelected(false);
+			s3.setSelected(false);
+			s4.setSelected(false);
+			name1.setText("");
+			name2.setText("");
+			name3.setText("");
+			name4.setText("");
+			
+		}
+		
+	};
+	
 	private JMenu m1, m2;
 	private JMenuBar m;
 	private JPanel schwierigkeit, spieler1, spieler2, spieler3, spieler4, spieler, buttons;
 	private JComboBox <Object> dropdowns1, dropdowns2, dropdowns3, dropdowns4;
-	private JCheckBox s1, s2, s3, s4;
 	private JRadioButton sehrleicht, leicht, mittel, schwer, sehrschwer;
+	private JCheckBox s1, s2, s3, s4;
 	private JLabel spielerlabel1, spielerlabel2, spielerlabel3, spielerlabel4;
 	private JTextField name1, name2, name3, name4;
 	private JButton reset, start;
@@ -95,7 +106,6 @@ public Hauptmenue (){
 	ButtonGroup schwere = new ButtonGroup (); 
 	
 	schwierigkeit = new JPanel(new GridLayout(5, 1));
-	schwere = new ButtonGroup();
 	sehrleicht = new JRadioButton("Sehr Leicht (16 Karten)");
 	sehrleicht.setBackground(Color.cyan);
 	schwere.add(sehrleicht);
@@ -121,11 +131,11 @@ public Hauptmenue (){
 
 	// Textfeld fuer die Spieler
 	s1 = new JCheckBox ();
-	s1.addItemListener(spieler1textfeld);
 	s1.setBackground(Color.yellow);;
+	s1.setSelected(true);
+	s1.setEnabled(false);
 	name1 = new JTextField(30);
 	name1.setFont(new Font("Serif", Font.PLAIN, 25));
-	name1.setEditable(false);
 	
 
 	s2 = new JCheckBox ();
@@ -289,6 +299,7 @@ public Hauptmenue (){
 	reset = new JButton("Reset");
 	reset.setBackground(Color.RED);
 	reset.setFont(new Font("MS Gothic", Font.BOLD, 20));
+	reset.addActionListener(resettip);
 
 	start = new JButton("Spiel starten!");
 	start.setBackground(Color.GREEN);
@@ -321,5 +332,4 @@ public static void main(String[] args){
 }
 	
 
-	}
 }
