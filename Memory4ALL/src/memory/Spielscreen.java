@@ -37,7 +37,7 @@ public class Spielscreen extends JFrame {
 		// Menueelemente fuer den oberen Rand
 		m1 = new JMenu("Anleitung");
 		m1.add("Ansehen");
-		m1.add("Punkte ergÃ¤nzen");
+		m1.add("Punkte ergänzen");
 		m1.setBackground(Color.lightGray);
 
 		m2 = new JMenu("Impressum");
@@ -65,14 +65,14 @@ public class Spielscreen extends JFrame {
 		spieler1 = new JPanel(new GridLayout(3, 1));
 		spieler1.add(new JLabel("Spieler 1"));
 		spieler1.add(new JLabel("Zeit: 12:00"));
-		spieler1.add(new Label("Spielzï¿½ge:25"));
+		spieler1.add(new Label("Spielzüge:25"));
 		spieler1.setBackground(Color.red);
 
 		// Spielerinformationen Spieler 3
 		spieler3 = new JPanel(new GridLayout(3, 1));
 		spieler3.add(new JLabel("Spieler 3"));
 		spieler3.add(new JLabel("Zeit: 13:00"));
-		spieler3.add(new Label("Spielzï¿½ge:24"));
+		spieler3.add(new Label("Spielzüge:24"));
 		spieler3.setBackground(Color.cyan);
 
 		// Bilderfassung Spieler 3
@@ -125,7 +125,7 @@ public class Spielscreen extends JFrame {
 		spieler2 = new JPanel(new GridLayout(3, 1));
 		spieler2.add(new JLabel("Spieler 2"));
 		spieler2.add(new JLabel("Zeit: 12:30"));
-		spieler2.add(new Label("Spielzï¿½ge:25"));
+		spieler2.add(new Label("Spielzüge:25"));
 		spieler2.setBackground(Color.green);
 
 		// Bilderfassung Spieler 2
@@ -148,7 +148,7 @@ public class Spielscreen extends JFrame {
 		spieler4 = new JPanel(new GridLayout(3, 1));
 		spieler4.add(new JLabel("Spieler 4"));
 		spieler4.add(new JLabel("Zeit: 15:00"));
-		spieler4.add(new Label("Spielzï¿½ge:24"));
+		spieler4.add(new Label("Spielzüge:24"));
 		spieler4.setBackground(Color.yellow);
 
 		// Zusammenfassung Spieler 2,4
