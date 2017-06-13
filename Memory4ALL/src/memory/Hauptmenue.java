@@ -1,18 +1,62 @@
 package memory;
 
 import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 
 public class Hauptmenue extends JFrame {
 	
+	private ItemListener spieler1textfeld = new ItemListener() {
+		@Override
+		public void itemStateChanged (ItemEvent e) {
+			if (s1.isSelected())
+				name1.setEditable(true);
+			else {
+				name1.setEditable(false);
+			}
+		}
+	};
+	private ItemListener spieler2textfeld = new ItemListener() {
+		@Override
+		public void itemStateChanged (ItemEvent e) {
+			if (s2.isSelected())
+				name2.setEditable(true);
+			else {
+				name2.setEditable(false);
+			}
+		}
+	};
+	private ItemListener spieler3textfeld = new ItemListener() {
+		@Override
+		public void itemStateChanged (ItemEvent e) {
+			if (s3.isSelected())
+				name3.setEditable(true);
+			else {
+				name3.setEditable(false);
+			}
+		}
+	};
+	
+	private ItemListener spieler4textfeld = new ItemListener() {
+		@Override
+		public void itemStateChanged (ItemEvent e) {
+			if (s4.isSelected())
+				name4.setEditable(true);
+			else {
+				name4.setEditable(false);
+			}
+		}
+	};
+	
 	private JMenu m1, m2;
 	private JMenuBar m;
-	private JFrame hauptmenue2;
 	private JPanel schwierigkeit, spieler1, spieler2, spieler3, spieler4, spieler, buttons;
 	private JComboBox <Object> dropdowns1, dropdowns2, dropdowns3, dropdowns4;
-	private JCheckBox sehrleicht, leicht, mittel, schwer, sehrschwer;
+	private JCheckBox s1, s2, s3, s4;
+	private JRadioButton sehrleicht, leicht, mittel, schwer, sehrschwer;
 	private JLabel spielerlabel1, spielerlabel2, spielerlabel3, spielerlabel4;
 	private JTextField name1, name2, name3, name4;
 	private JButton reset, start;
@@ -52,37 +96,61 @@ public Hauptmenue (){
 	
 	schwierigkeit = new JPanel(new GridLayout(5, 1));
 	schwere = new ButtonGroup();
-	sehrleicht = new JCheckBox("Sehr Leicht (16 Karten)");
+	sehrleicht = new JRadioButton("Sehr Leicht (16 Karten)");
+	sehrleicht.setBackground(Color.cyan);
 	schwere.add(sehrleicht);
 	schwierigkeit.add(sehrleicht);
-	leicht = new JCheckBox("Leicht (32 Karten)");
+	leicht = new JRadioButton("Leicht (32 Karten)");
+	leicht.setBackground(Color.cyan);
 	schwere.add(leicht);
 	schwierigkeit.add(leicht);
-	mittel = new JCheckBox("Mittel (48 Karten)");
+	mittel = new JRadioButton("Mittel (48 Karten)");
+	mittel.setBackground(Color.cyan);
 	schwere.add(mittel);
 	schwierigkeit.add(mittel);
-	schwer = new JCheckBox("Schwer(64 Karten)");
+	schwer = new JRadioButton("Schwer(64 Karten)");
+	schwer.setBackground(Color.cyan);
 	schwere.add(schwer);
 	schwierigkeit.add(schwer);
-	sehrschwer = new JCheckBox("Sehr Schwer (72 Karten)");
+	sehrschwer = new JRadioButton("Sehr Schwer (72 Karten)");
+	sehrschwer.setBackground(Color.cyan);
 	schwere.add(sehrschwer);
 	schwierigkeit.add(sehrschwer);
 	schwierigkeit.setBorder(rahmenschwierigkeit);
 	schwierigkeit.setBackground(Color.cyan);
 
 	// Textfeld fuer die Spieler
+	s1 = new JCheckBox ();
+	s1.addItemListener(spieler1textfeld);
+	s1.setBackground(Color.yellow);;
 	name1 = new JTextField(30);
 	name1.setFont(new Font("Serif", Font.PLAIN, 25));
+	name1.setEditable(false);
+	
 
+	s2 = new JCheckBox ();
+	s2.addItemListener(spieler2textfeld);
+	s2.setBackground(Color.orange);;
 	name2 = new JTextField(30);
 	name2.setFont(new Font("Serif", Font.PLAIN, 25));
+	name2.setEditable(false);
+	
 
+	s3 = new JCheckBox ();
+	s3.addItemListener(spieler3textfeld);
+	s3.setBackground(Color.pink);
 	name3 = new JTextField(30);
 	name3.setFont(new Font("Serif", Font.PLAIN, 25));
+	name3.setEditable(false);
+	
 
+	s4 = new JCheckBox ();
+	s4.addItemListener(spieler4textfeld);
+	s4.setBackground(Color.magenta);
 	name4 = new JTextField(30);
 	name4.setFont(new Font("Serif", Font.PLAIN, 25));
-
+	name4.setEditable(false);
+	
 	// Label fuer Spieler
 	spielerlabel1 = new JLabel("Spieler 1");
 	spielerlabel1.setFont(new Font("Serif", Font.BOLD, 40));
@@ -98,24 +166,28 @@ public Hauptmenue (){
 
 	// Panel fuer Spieler1
 	spieler1 = new JPanel(new FlowLayout(0));
+	spieler1.add (s1);
 	spieler1.add(spielerlabel1);
 	spieler1.add(name1);
 	spieler1.setBackground(Color.yellow);
 
 	// Panel fuer Spieler2
 	spieler2 = new JPanel(new FlowLayout(0));
+	spieler2.add (s2);
 	spieler2.add(spielerlabel2);
 	spieler2.add(name2);
 	spieler2.setBackground(Color.orange);
 
 	// Panel fuer Spieler3
 	spieler3 = new JPanel(new FlowLayout(0));
+	spieler3.add (s3);
 	spieler3.add(spielerlabel3);
 	spieler3.add(name3);
 	spieler3.setBackground(Color.pink);
 
 	// Panel fuer Spieler 4
 	spieler4 = new JPanel(new FlowLayout(0));
+	spieler4.add (s4);
 	spieler4.add(spielerlabel4);
 	spieler4.add(name4);
 	spieler4.setBackground(Color.magenta);
