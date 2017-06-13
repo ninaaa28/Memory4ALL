@@ -1,6 +1,8 @@
 package memory;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
@@ -13,16 +15,27 @@ public class Spielscreen extends JFrame {
 	private JMenuBar m;
 	private JPanel spieler1, spieler2, spieler3, spieler4, spielerleiste13, spielerleiste24, buttons, spielfeld;
 	private JButton ngame, rgame, close;
-	private int anzahlKarten=0;
+	private int anzahlSpielkarten=0;
+	
+	private ActionListener kartenUmdrehen = new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			System.out.println("Drehen");
+			
+		}
+	};
+	
+public Spielscreen (int anzahlSpielkarten){
 	
 	
-	
-public Spielscreen (){
 	
 	// Initialisierung des Screens
 	super ("Memory");
 	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	getContentPane().setLayout(new BorderLayout());
+	
 
 	// Menueelemente fuer den oberen Rand
 	m1 = new JMenu("Anleitung");
@@ -86,14 +99,19 @@ public Spielscreen (){
 	ImageIcon tisch = new ImageIcon(tischresize);
 	JLabel tischbild = new JLabel(tisch);
 	spielfeld= new JPanel();
-	spielfeld.setLayout(new GridLayout(8,8));
+	spielfeld.setLayout(new GridLayout(8,0));
 	
 	//Hinzufügen der Karten über eine Schleife
-	
-	anzahlKarten = 32;
-	for(int i=0; i<anzahlKarten;i++){
+	this.anzahlSpielkarten=anzahlSpielkarten;
+	//nur für Testzwecke
+
+	for(int i=0; i<anzahlSpielkarten;i++){
 		JButton spielKarten = new JButton("karte"+i);
 		spielfeld.add(spielKarten);
+		String tmpKarte = ("karte"+1);
+		
+		spielKarten.addActionListener(kartenUmdrehen);
+		spielKarten.setIcon(new ImageIcon(path+"Rueckseite.png"));
 	}
 	
 
@@ -143,7 +161,7 @@ public Spielscreen (){
 	rgame.setBackground(Color.green);
 	rgame.setFont(new Font("MS Gothic", Font.BOLD, 20));
 
-	close = new JButton("Anwendung schlie�en");
+	close = new JButton("Anwendung schliessen");
 	close.setBackground(Color.red);
 	close.setFont(new Font("MS Gothic", Font.BOLD, 20));
 
@@ -171,7 +189,7 @@ public Spielscreen (){
 
 	public static void main (String [] args){
 	 
-		new Spielscreen();
+		new Spielscreen(32);
 	}
 
 
