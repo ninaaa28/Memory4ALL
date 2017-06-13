@@ -102,15 +102,21 @@ public class Spielscreen extends JFrame {
 		this.anzahlSpielkarten = anzahlSpielkarten;
 		// nur für Testzwecke
 		JButton spielKarten[] = new JButton[anzahlSpielkarten];
+		JButton spielKartenFront[] = new JButton[anzahlSpielkarten];
 
 		for (int i = 0; i < anzahlSpielkarten; i++) {
 			spielKarten[i] = new JButton("karte" + i);
 			spielKarten[i].setText("");
 			spielfeld.add(spielKarten[i]);
 			String tmpKarte = ("karte" + 1);
+			
+			//Das jedes 2te Paar ein neues Bild bekommt, Rest = 0 da ZeroBased und bei Null anfängt
+			if(i>1&&i%2==0){
+				System.out.println("Nächstes Bild "+i);
+			}
 
 			spielKarten[i].addActionListener(kartenUmdrehen);
-			spielKarten[i].setIcon(new ImageIcon(path + "Rueckseite.png"));
+			spielKarten[i].setIcon (new ImageIcon(path + "Rueckseite.png"));
 
 		}
 		pack();
