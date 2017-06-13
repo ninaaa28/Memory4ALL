@@ -68,6 +68,7 @@ public class Spielscreen extends JFrame {
 		spieler1.add(new Label("Spielz�ge:25"));
 		spieler1.setBackground(Color.red);
 
+		//TODO Dummy-Daten ersetzen
 		// Spielerinformationen Spieler 3
 		spieler3 = new JPanel(new GridLayout(3, 1));
 		spieler3.add(new JLabel("Spieler 3"));
@@ -112,7 +113,8 @@ public class Spielscreen extends JFrame {
 			spielKarten[i].addActionListener(kartenUmdrehen);
 			spielKarten[i].setIcon(new ImageIcon(path + "Rueckseite.png"));
 		}
-
+		
+		//TODO Dummy-Daten ersetzen
 		// Spielerinformation Spieler 2
 		spieler2 = new JPanel(new GridLayout(3, 1));
 		spieler2.add(new JLabel("Spieler 2"));

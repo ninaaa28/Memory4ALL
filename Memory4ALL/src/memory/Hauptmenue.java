@@ -11,6 +11,10 @@ import javax.swing.border.Border;
 
 public class Hauptmenue extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ItemListener spieler2textfeld = new ItemListener() {
 		@Override
 		public void itemStateChanged (ItemEvent e) {
@@ -43,7 +47,7 @@ public class Hauptmenue extends JFrame {
 		}
 	};
 	
-	private ActionListener resettip = new ActionListener (){
+	private ActionListener resettip = new ActionListener () {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -61,6 +65,51 @@ public class Hauptmenue extends JFrame {
 		}
 		
 	};
+	
+	//ActionListener buttonListener "Spiel starten"
+	private ActionListener buttonListenerStart = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String cmd = e.getActionCommand();
+			
+			if(cmd.equals("Spiel Starten!"));
+			System.out.println("Okay");
+			
+
+			if(cmd.equals("Spiel Starten!"))
+				if(s1.isSelected())
+					Spieler.erstelleSpieler1(name1.getText(), 0, 0f, 0f, 0, 0);
+				//TODO Exception
+//				else
+//
+			
+			if(cmd.equals("Spiel Starten!"))
+				if(s2.isSelected())
+					Spieler.erstelleSpieler2(name2.getText(), 0, 0f, 0f, 0, 0);
+				//TODO Exception
+//				else
+//	
+			
+			if(cmd.equals("Spiel Starten!"))
+				if(s3.isSelected())
+					Spieler.erstelleSpieler3(name3.getText(), 0, 0f, 0f, 0, 0);
+				//TODO Exception
+//				else
+//	
+			
+			if(cmd.equals("Spiel Starten!"))
+				if(s4.isSelected())
+					Spieler.erstelleSpieler4(name4.getText(), 0, 0f, 0f, 0, 0);
+				//TODO Exception
+//				else
+//	
+			
+			if(cmd.equals("Spiel Starten!"))
+				Spieler.listeAusgeben();
+
+		}
+		};
 	
 	private JMenu m1, m2;
 	private JMenuBar m;
@@ -103,28 +152,28 @@ public Hauptmenue (){
 
 	// Schwierigkeitsbereich anpassen
 	
-	ButtonGroup schwere = new ButtonGroup (); 
+	ButtonGroup schwierigkeitsgrad = new ButtonGroup (); 
 	
 	schwierigkeit = new JPanel(new GridLayout(5, 1));
 	sehrleicht = new JRadioButton("Sehr Leicht (16 Karten)");
 	sehrleicht.setBackground(Color.cyan);
-	schwere.add(sehrleicht);
+	schwierigkeitsgrad.add(sehrleicht);
 	schwierigkeit.add(sehrleicht);
 	leicht = new JRadioButton("Leicht (32 Karten)");
 	leicht.setBackground(Color.cyan);
-	schwere.add(leicht);
+	schwierigkeitsgrad.add(leicht);
 	schwierigkeit.add(leicht);
 	mittel = new JRadioButton("Mittel (48 Karten)");
 	mittel.setBackground(Color.cyan);
-	schwere.add(mittel);
+	schwierigkeitsgrad.add(mittel);
 	schwierigkeit.add(mittel);
 	schwer = new JRadioButton("Schwer(64 Karten)");
 	schwer.setBackground(Color.cyan);
-	schwere.add(schwer);
+	schwierigkeitsgrad.add(schwer);
 	schwierigkeit.add(schwer);
 	sehrschwer = new JRadioButton("Sehr Schwer (72 Karten)");
 	sehrschwer.setBackground(Color.cyan);
-	schwere.add(sehrschwer);
+	schwierigkeitsgrad.add(sehrschwer);
 	schwierigkeit.add(sehrschwer);
 	schwierigkeit.setBorder(rahmenschwierigkeit);
 	schwierigkeit.setBackground(Color.cyan);
@@ -302,9 +351,10 @@ public Hauptmenue (){
 	reset.addActionListener(resettip);
 
 	start = new JButton("Spiel starten!");
+	start.addActionListener(buttonListenerStart );
 	start.setBackground(Color.GREEN);
 	start.setFont(new Font("MS Gothic", Font.BOLD, 20));
-
+	
 	// Panel fuer Buttons fuer Start/Reset
 	buttons = new JPanel(new GridLayout(1, 2));
 	buttons.add(reset);
@@ -320,16 +370,48 @@ public Hauptmenue (){
 	// Weitere Einstellungen fuer das Hauptmenue
 	setVisible(true);
 	setBounds(400, 50, 1100, 750);
-	setResizable(true);
-	
+	setResizable(true);	
 
-	
 	}
+
+
+	//Getter und Setter
+	public JTextField getName1() {
+		return name1;
+	}
+	
+	public void setName1(JTextField name1) {
+		this.name1 = name1;
+	}
+	
+	public JTextField getName2() {
+		return name2;
+	}
+	
+	public void setName2(JTextField name2) {
+		this.name2 = name2;
+	}
+	
+	public JTextField getName3() {
+		return name3;
+	}
+	
+	public void setName3(JTextField name3) {
+		this.name3 = name3;
+	}
+	
+	public JTextField getName4() {
+		return name4;
+	}
+	
+	public void setName4(JTextField name4) {
+		this.name4 = name4;
+	}
+	
+	
 
 public static void main(String[] args){
 	
 	new Hauptmenue ();
 }
-	
-
 }
