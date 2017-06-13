@@ -96,25 +96,27 @@ public class Spielscreen extends JFrame {
 		ImageIcon tisch = new ImageIcon(tischresize);
 		JLabel tischbild = new JLabel(tisch);
 		spielfeld = new JPanel();
-		spielfeld.setLayout(new GridLayout(4,4));
+		spielfeld.setLayout(new GridLayout(4, 4, 10, 10));
 
 		// Hinzufügen der Karten über eine Schleife
 		this.anzahlSpielkarten = anzahlSpielkarten;
 		// nur für Testzwecke
 		JButton spielKarten[] = new JButton[anzahlSpielkarten];
-		
+
 		for (int i = 0; i < anzahlSpielkarten; i++) {
-			spielKarten[i] = new JButton("karte"+i); 
-			spielKarten[i].setSize(50, 50);
+			spielKarten[i] = new JButton("karte" + i);
+			spielKarten[i].setText("");
 			spielfeld.add(spielKarten[i]);
 			String tmpKarte = ("karte" + 1);
 
 			spielKarten[i].addActionListener(kartenUmdrehen);
 			spielKarten[i].setIcon(new ImageIcon(path + "Rueckseite.png"));
+
 		}
+		pack();
 
 		// Spielerinformation Spieler 2
-		spieler2 = new JPanel(new GridLayout(3, 1));
+		spieler2 = new JPanel(new GridLayout(6, 6));
 		spieler2.add(new JLabel("Spieler 2"));
 		spieler2.add(new JLabel("Zeit: 12:30"));
 		spieler2.add(new Label("Spielz�ge:25"));
