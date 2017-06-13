@@ -122,7 +122,7 @@ public class Spielscreen extends JFrame {
 		pack();
 
 		// Spielerinformation Spieler 2
-		spieler2 = new JPanel(new GridLayout(6, 6));
+		spieler2 = new JPanel(new GridLayout(3, 1));
 		spieler2.add(new JLabel("Spieler 2"));
 		spieler2.add(new JLabel("Zeit: 12:30"));
 		spieler2.add(new Label("Spielz�ge:25"));
