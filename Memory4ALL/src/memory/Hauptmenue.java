@@ -70,42 +70,50 @@ public class Hauptmenue extends JFrame {
 	private ActionListener buttonListenerStart = new ActionListener() {
 
 		@Override
+		//TODO throw Exception
 		public void actionPerformed(ActionEvent e) {
 			String cmd = e.getActionCommand();
 			
-			if(cmd.equals("Spiel Starten!"));
+			if(cmd.equals("Spiel starten!"))
 			System.out.println("Okay");
 			
 
-			if(cmd.equals("Spiel Starten!"))
+			if(cmd.equals("Spiel starten!"))
 				if(s1.isSelected())
+					if(name1.getText().equals(null))
+						/*EXCEPTION*/;
+					else {
 					Spieler.erstelleSpieler1(name1.getText(), 0, 0f, 0f, 0, 0);
-				//TODO Exception
-//				else
-//
+
+				};
+
 			
-			if(cmd.equals("Spiel Starten!"))
+			if(cmd.equals("Spiel starten!"))
 				if(s2.isSelected())
-					Spieler.erstelleSpieler2(name2.getText(), 0, 0f, 0f, 0, 0);
-				//TODO Exception
-//				else
-//	
+					if(name2.getText().equals(null))
+						/*EXCEPTION*/;
+					else {
+						Spieler.erstelleSpieler2(name2.getText(), 0, 0f, 0f, 0, 0);
+					}
 			
-			if(cmd.equals("Spiel Starten!"))
+			if(cmd.equals("Spiel starten!"))
 				if(s3.isSelected())
+					if(name3.getText().equals(null))
+						/*EXCEPTION*/;
+					else {
 					Spieler.erstelleSpieler3(name3.getText(), 0, 0f, 0f, 0, 0);
-				//TODO Exception
-//				else
-//	
+				}
+	
 			
-			if(cmd.equals("Spiel Starten!"))
+			if(cmd.equals("Spiel starten!"))
 				if(s4.isSelected())
+					if(name4.getText().equals(null))
+						/*EXCEPTION*/;
+					else {
 					Spieler.erstelleSpieler4(name4.getText(), 0, 0f, 0f, 0, 0);
-				//TODO Exception
-//				else
-//	
-			
-			if(cmd.equals("Spiel Starten!"))
+				}
+	
+			if(cmd.equals("Spiel starten!"))
 				Spieler.listeAusgeben();
 
 		}
@@ -373,41 +381,6 @@ public Hauptmenue (){
 	setResizable(true);	
 
 	}
-
-
-	//Getter und Setter
-	public JTextField getName1() {
-		return name1;
-	}
-	
-	public void setName1(JTextField name1) {
-		this.name1 = name1;
-	}
-	
-	public JTextField getName2() {
-		return name2;
-	}
-	
-	public void setName2(JTextField name2) {
-		this.name2 = name2;
-	}
-	
-	public JTextField getName3() {
-		return name3;
-	}
-	
-	public void setName3(JTextField name3) {
-		this.name3 = name3;
-	}
-	
-	public JTextField getName4() {
-		return name4;
-	}
-	
-	public void setName4(JTextField name4) {
-		this.name4 = name4;
-	}
-	
 	
 
 public static void main(String[] args){
