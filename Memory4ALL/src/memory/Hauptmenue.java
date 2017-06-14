@@ -1,10 +1,7 @@
 package memory;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -74,50 +71,46 @@ public class Hauptmenue extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			String cmd = e.getActionCommand();
 			
-			if(cmd.equals("Spiel starten!"))
-			System.out.println("Okay");
-			
-
+			//Wenn für Spieler eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler1 erzeugt
 			if(cmd.equals("Spiel starten!"))
 				if(s1.isSelected())
 					if(name1.getText().equals(null))
 						/*EXCEPTION*/;
 					else {
 					Spieler.erstelleSpieler1(name1.getText(), 0, 0f, 0f, 0, 0);
-
+					System.out.println("Spieler1 " + name1.getText() + " wurde erstellt");
 				};
 
-			
+			//Wenn für Spieler 2 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler2 erzeugt
 			if(cmd.equals("Spiel starten!"))
 				if(s2.isSelected())
 					if(name2.getText().equals(null))
 						/*EXCEPTION*/;
 					else {
 						Spieler.erstelleSpieler2(name2.getText(), 0, 0f, 0f, 0, 0);
+						System.out.println("Spieler2 " + name2.getText() + "  wurde erstellt");
 					}
-			
+			//Wenn für Spieler 3 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler3 erzeugt
 			if(cmd.equals("Spiel starten!"))
 				if(s3.isSelected())
 					if(name3.getText().equals(null))
 						/*EXCEPTION*/;
 					else {
 					Spieler.erstelleSpieler3(name3.getText(), 0, 0f, 0f, 0, 0);
+					System.out.println("Spieler3  " + name3.getText() + " wurde erstellt");
 				}
 	
-			
+			//Wenn für Spieler 4 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler4 erzeugt
 			if(cmd.equals("Spiel starten!"))
 				if(s4.isSelected())
 					if(name4.getText().equals(null))
 						/*EXCEPTION*/;
 					else {
 					Spieler.erstelleSpieler4(name4.getText(), 0, 0f, 0f, 0, 0);
+					System.out.println("Spieler4  " + name4.getText() + " wurde erstellt");
 				}
-	
-			if(cmd.equals("Spiel starten!"))
-				Spieler.listeAusgeben();
-
-		}
-		};
+	}
+	};
 	
 	private JMenu m1, m2;
 	private JMenuBar m;

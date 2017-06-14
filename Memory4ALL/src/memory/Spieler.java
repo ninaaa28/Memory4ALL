@@ -1,13 +1,17 @@
 package memory;
 
-import java.util.Iterator;
-import java.util.TreeSet;
+import java.util.*;
 
-public class Spieler implements Comparable<Spieler> {
+public class Spieler {
 	
-	private String name;				//Name von "Spieler"
-//TODO Attribut "Avatar" (Bild des Spielers hinzufügen
+	private static Spieler spieler1;
+	private static Spieler spieler2;
+	private static Spieler spieler3;
+	private static Spieler spieler4;
+	
+//	TODO Attribut "Avatar" (Bild des Spielers hinzufügen
 //	private avartar;
+	private String name;				//Name von "Spieler"
 	private int no_zuege;				//Anzhal (number of = no) der Züge von "Spieler"
 	private float spielzeit;			//gesamte Spielzeit von "Spieler"
 	private float zeit_pro_zug;			//Zeit pro Zug von "Spieler"
@@ -23,73 +27,56 @@ public class Spieler implements Comparable<Spieler> {
 		this.zeit_pro_zug = zeit_pro_zug;
 		this.no_paerchen = no_paerchen;
 		this.plazierung = plazierung;
-		
-		//Zähler der "Spieler"-Objekte hochzählen
 	}
 	
-	private static TreeSet<Spieler> liste = new TreeSet<Spieler>();
-
-//	private static Einwohner ermittleObjekt(String vorname, String name) {
-//		return liste.floor(new Einwohner(null, vorname, name, null, null, null));
-//	}
-//	
+	//Daten-Container für die Spieler-Objekte
+	public static ArrayList<Spieler> liste = new ArrayList<Spieler>();
+	
+	//Spieler1 wird erzeugt - Aufruf durch Hauptmenue-Klasse
 	public static void erstelleSpieler1(String name, int no_zuege, float spielzeit, 
 											float zeit_pro_zug, int no_paerchen, int plazierung) {
-		Spieler spieler1 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
-		
+		spieler1 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
 		liste.add(spieler1);
 	}
 
+	//Spieler2 wird erzeugt - Aufruf durch Hauptmenue-Klasse
 	public static void erstelleSpieler2(String name, int no_zuege, float spielzeit, 
 											float zeit_pro_zug, int no_paerchen, int plazierung) {
-		Spieler spieler2 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
-		
+		spieler2 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
 		liste.add(spieler2);
 
 }
 
+	//Spieler3 wird erzeugt - Aufruf durch Hauptmenue-Klasse
 	public static void erstelleSpieler3(String name, int no_zuege, float spielzeit, 
 											float zeit_pro_zug, int no_paerchen, int plazierung) {
-		Spieler spieler3 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
-		
+		spieler3 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
 		liste.add(spieler3);
 
 }
-	
+
+	//Spieler4 wird erzeugt - Aufruf durch Hauptmenue-Klasse
 	public static void erstelleSpieler4(String name, int no_zuege, float spielzeit, 
 											float zeit_pro_zug, int no_paerchen, int plazierung) {
-		Spieler spieler4 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
-		
+		spieler4 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
 		liste.add(spieler4);
 
 }
-	
-
-	@Override
-	public int compareTo(Spieler o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	
-	//ANFANG TEST!!!!!!!!!!!!!!!!!!!
 	public static void listeAusgeben() {
 		Iterator<Spieler> i = liste.iterator();
 		
 		while(i.hasNext()) {
-			System.out.println(i.next());
+			System.out.println(i.next().toString());
 		}
-		
 	}
 	
 	public static void listeClear() {
 		
 		liste.clear();
 	}
+
 	
-	//ENDE TEST!!!!!!!!!!!!!!!!!!!!!
-	
-	//Getter- und Setter-Methoden für "Spieler"
+	//Getter- und Setter-Methoden für Spieler-Objekte
 	public String getName() {
 		return name;
 	}
@@ -148,18 +135,4 @@ public class Spieler implements Comparable<Spieler> {
 	public void setPlazierung(int plazierung) {
 		this.plazierung = plazierung;
 	}
-
-//	TEST
-public static void main(String[] args) {
-	
-//	listeClear();
-//	Spieler s1 = new Spieler("Julius", 0, 0f, 0f, 0 ,0);
-//	Spieler s2 = new Spieler("Lara", 0, 0f, 0f, 0 ,0);
-//	Spieler s3 = new Spieler("Lara", 0, 0f, 0f, 0 ,0);
-//	liste.add(s1);
-//	liste.add(s2);
-//	liste.add(s3);
-//	listeAusgeben();
 }
-	
-}	
