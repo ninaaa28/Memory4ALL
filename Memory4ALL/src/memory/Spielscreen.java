@@ -77,11 +77,13 @@ public class Spielscreen extends JFrame {
 		spieler3.setBackground(Color.cyan);
 
 		// Bilderfassung Spieler 3
-		ImageIcon glumandereinfuegen = new ImageIcon(path + "003-charmander.png");
-		Image glumandergetter = glumandereinfuegen.getImage();
-		Image glumanderresize = glumandergetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-		ImageIcon glumander = new ImageIcon(glumanderresize);
-		JLabel glumanderbild = new JLabel(glumander);
+		//ImageIcon glumandereinfuegen = new ImageIcon(path + "003-charmander.png");
+		//Image glumandergetter = glumandereinfuegen.getImage();
+		//Image glumanderresize = glumandergetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+		//ImageIcon glumander = new ImageIcon(glumanderresize);
+		JLabel glumanderbild = new JLabel(new ImageIcon(path + "001-squirtle2.png"));
+		
+		
 
 		// Zusammenfassung der Spieler 1,3
 		spielerleiste13 = new JPanel(new GridLayout(4, 1));
@@ -97,7 +99,7 @@ public class Spielscreen extends JFrame {
 		ImageIcon tisch = new ImageIcon(tischresize);
 		JLabel tischbild = new JLabel(tisch);
 		spielfeld = new JPanel();
-		spielfeld.setLayout(new GridLayout(4, 4, 10, 10));
+		spielfeld.setLayout(new GridLayout(8, 8));
 
 		// Hinzufügen der Karten über eine Schleife
 		this.anzahlSpielkarten = anzahlSpielkarten;
@@ -112,7 +114,8 @@ public class Spielscreen extends JFrame {
 			spielKarten[i].setSize(100, 100);
 			String tmpKarte = ("karte" + 1);
 			spielKarten[i].addActionListener(kartenUmdrehen);
-			spielKarten[i].setIcon(new ImageIcon(path + "Rueckseite.png"));
+			spielKarten[i].setIcon (new ImageIcon(path + "Rueckseite.png"));
+			//spielKarten[i].
 
 			// Das jedes 2te Paar ein neues Bild bekommt, Rest = 0 da ZeroBased
 			// und bei Null anfängt
