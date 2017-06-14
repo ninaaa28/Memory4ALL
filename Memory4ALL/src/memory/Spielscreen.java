@@ -3,7 +3,7 @@ package memory;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.Image;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.text.html.HTMLDocument.HTMLReader.SpecialAction;
@@ -115,7 +115,9 @@ public class Spielscreen extends JFrame {
 			String tmpKarte = ("karte" + 1);
 			spielKarten[i].addActionListener(kartenUmdrehen);
 			spielKarten[i].setIcon (new ImageIcon(path + "Rueckseite.png"));
-			//spielKarten[i].
+			//spielKarten[i]. .getResource("pfeil.png")
+			
+			
 
 			// Das jedes 2te Paar ein neues Bild bekommt, Rest = 0 da ZeroBased
 			// und bei Null anfängt
