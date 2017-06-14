@@ -158,6 +158,7 @@ public Hauptmenue (){
 	schwierigkeit = new JPanel(new GridLayout(5, 1));
 	sehrleicht = new JRadioButton("Sehr Leicht (16 Karten)");
 	sehrleicht.setBackground(Color.cyan);
+	sehrleicht.setSelected(true); 								//sehrleicht ist default
 	schwierigkeitsgrad.add(sehrleicht);
 	schwierigkeit.add(sehrleicht);
 	leicht = new JRadioButton("Leicht (32 Karten)");
