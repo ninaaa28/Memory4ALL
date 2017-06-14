@@ -37,7 +37,7 @@ public class Spielscreen extends JFrame {
 		// Menueelemente fuer den oberen Rand
 		m1 = new JMenu("Anleitung");
 		m1.add("Ansehen");
-		m1.add("Punkte ergÃ¤nzen");
+		m1.add("Punkte ergänzen");
 		m1.setBackground(Color.lightGray);
 
 		m2 = new JMenu("Impressum");
@@ -65,7 +65,7 @@ public class Spielscreen extends JFrame {
 		spieler1 = new JPanel(new GridLayout(3, 1));
 		spieler1.add(new JLabel("Spieler 1"));
 		spieler1.add(new JLabel("Zeit: 12:00"));
-		spieler1.add(new Label("Spielzï¿½ge:25"));
+		spieler1.add(new Label("Spielzüge:25"));
 		spieler1.setBackground(Color.red);
 
 		//TODO Dummy-Daten ersetzen
@@ -73,7 +73,7 @@ public class Spielscreen extends JFrame {
 		spieler3 = new JPanel(new GridLayout(3, 1));
 		spieler3.add(new JLabel("Spieler 3"));
 		spieler3.add(new JLabel("Zeit: 13:00"));
-		spieler3.add(new Label("Spielzï¿½ge:24"));
+		spieler3.add(new Label("Spielzüge:24"));
 		spieler3.setBackground(Color.cyan);
 
 		// Bilderfassung Spieler 3
@@ -97,29 +97,41 @@ public class Spielscreen extends JFrame {
 		ImageIcon tisch = new ImageIcon(tischresize);
 		JLabel tischbild = new JLabel(tisch);
 		spielfeld = new JPanel();
-		spielfeld.setLayout(new GridLayout(4,4));
+		spielfeld.setLayout(new GridLayout(4, 4, 10, 10));
 
 		// HinzufÃ¼gen der Karten Ã¼ber eine Schleife
 		this.anzahlSpielkarten = anzahlSpielkarten;
 		// nur fÃ¼r Testzwecke
 		JButton spielKarten[] = new JButton[anzahlSpielkarten];
-		
+		JButton spielKartenFront[] = new JButton[anzahlSpielkarten];
+
 		for (int i = 0; i < anzahlSpielkarten; i++) {
-			spielKarten[i] = new JButton("karte"+i); 
-			spielKarten[i].setSize(50, 50);
+			spielKarten[i] = new JButton("karte" + i);
+			spielKarten[i].setText("");
 			spielfeld.add(spielKarten[i]);
 			String tmpKarte = ("karte" + 1);
+			
+			//Das jedes 2te Paar ein neues Bild bekommt, Rest = 0 da ZeroBased und bei Null anfÃ¤ngt
+			if(i>1&&i%2==0){
+				System.out.println("NÃ¤chstes Bild "+i);
+			}
 
 			spielKarten[i].addActionListener(kartenUmdrehen);
-			spielKarten[i].setIcon(new ImageIcon(path + "Rueckseite.png"));
+			spielKarten[i].setIcon (new ImageIcon(path + "Rueckseite.png"));
+
 		}
+<<<<<<< HEAD
 		
 		//TODO Dummy-Daten ersetzen
+=======
+		pack();
+
+>>>>>>> branch 'master' of https://github.com/WISCB16/Memory4ALL.git
 		// Spielerinformation Spieler 2
 		spieler2 = new JPanel(new GridLayout(3, 1));
 		spieler2.add(new JLabel("Spieler 2"));
 		spieler2.add(new JLabel("Zeit: 12:30"));
-		spieler2.add(new Label("Spielzï¿½ge:25"));
+		spieler2.add(new Label("Spielzüge:25"));
 		spieler2.setBackground(Color.green);
 
 		// Bilderfassung Spieler 2
@@ -142,7 +154,7 @@ public class Spielscreen extends JFrame {
 		spieler4 = new JPanel(new GridLayout(3, 1));
 		spieler4.add(new JLabel("Spieler 4"));
 		spieler4.add(new JLabel("Zeit: 15:00"));
-		spieler4.add(new Label("Spielzï¿½ge:24"));
+		spieler4.add(new Label("Spielzüge:24"));
 		spieler4.setBackground(Color.yellow);
 
 		// Zusammenfassung Spieler 2,4

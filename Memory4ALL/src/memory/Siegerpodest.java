@@ -78,14 +78,9 @@ public class Siegerpodest extends JFrame {
 		rgame = new JButton("Spiel erneut beginnen?");
 		rgame.setBackground(Color.green);
 		rgame.setFont(new Font("MS Gothic", Font.BOLD, 20));
-
-		close = new JButton("Anwendung schliessen");
-		close.setBackground(Color.red);
-		close.setFont(new Font("MS Gothic", Font.BOLD, 20));
-
+		
 		// Button in ein Panel einpassen
 		buttons = new JPanel(new GridLayout(1, 3));
-		buttons.add(close);
 		buttons.add(ngame);
 		buttons.add(rgame);
 
