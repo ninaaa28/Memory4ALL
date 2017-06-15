@@ -10,13 +10,19 @@ import javax.swing.text.html.HTMLDocument.HTMLReader.SpecialAction;
 
 public class Spielscreen extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JFrame Memory;
 	private JMenu m1, m2;
 	private JMenuBar m;
 	private JPanel spieler1, spieler2, spieler3, spieler4, spielerleiste13, spielerleiste24, buttons, spielfeld;
 	private JButton ngame, rgame, close;
-	private int anzahlSpielkarten = 0;
+//	TODO je nach Schwierigkeitsgrad werden bestimmt viele Karten angezeigt
+	private int anzahlSpielkarten;
 
+	//Nach klick auf eine Karte wird die Karte umgedreht
 	private ActionListener kartenUmdrehen = new ActionListener() {
 
 		@Override
@@ -26,6 +32,23 @@ public class Spielscreen extends JFrame {
 
 		}
 	};
+	
+	//ActionListener buttonListener "Spiel starten"
+	private ActionListener buttonListenerReset = new ActionListener() {
+
+		@Override
+		//TODO throw Exception
+		public void actionPerformed(ActionEvent e) {
+			String cmd = e.getActionCommand();
+				
+				if(cmd.equals("Spiel neu konfigurieren?")) {
+					Hauptmenue hm = new Hauptmenue();
+					hm.setVisible(true);
+//					TODO Spielscreen muss beendet werden
+					
+				}
+		}
+		};
 
 	public Spielscreen(int anzahlSpielkarten) {
 
@@ -121,9 +144,9 @@ public class Spielscreen extends JFrame {
 
 			// Das jedes 2te Paar ein neues Bild bekommt, Rest = 0 da ZeroBased
 			// und bei Null anfängt
-			if (i > 1 && i % 2 == 0) {
-				System.out.println("Nächstes Bild " + i);
-			}
+//			if (i > 1 && i % 2 == 0) {
+//				System.out.println("Nächstes Bild " + i);
+//			}
 
 		}
 
@@ -167,13 +190,14 @@ public class Spielscreen extends JFrame {
 		spielerleiste24.add(pikachubild);
 
 		// Buttons am Ende
-		ngame = new JButton("Spiel neu konfigurieren?");
-		ngame.setBackground(Color.YELLOW);
-		ngame.setFont(new Font("MS Gothic", Font.BOLD, 20));
-
-		rgame = new JButton("Spiel erneut beginnen?");
-		rgame.setBackground(Color.green);
+		rgame = new JButton("Spiel neu konfigurieren?");
+		rgame.addActionListener(buttonListenerReset);
+		rgame.setBackground(Color.YELLOW);
 		rgame.setFont(new Font("MS Gothic", Font.BOLD, 20));
+
+		ngame = new JButton("Spiel erneut beginnen?");
+		ngame.setBackground(Color.green);
+		ngame.setFont(new Font("MS Gothic", Font.BOLD, 20));
 
 		close = new JButton("Anwendung schliessen");
 		close.setBackground(Color.red);
@@ -182,8 +206,8 @@ public class Spielscreen extends JFrame {
 		// Button in ein Panel einpassen
 		buttons = new JPanel(new GridLayout(1, 3));
 		buttons.add(close);
-		buttons.add(ngame);
 		buttons.add(rgame);
+		buttons.add(ngame);
 
 		// Layout fuer das Frame
 		getContentPane().add(m, BorderLayout.NORTH);
@@ -202,7 +226,7 @@ public class Spielscreen extends JFrame {
 
 	public static void main(String[] args) {
 
-		new Spielscreen(32);
+		new Spielscreen(64);
 	}
 
 }

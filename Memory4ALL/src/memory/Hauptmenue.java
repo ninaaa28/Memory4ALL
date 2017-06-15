@@ -76,40 +76,53 @@ public class Hauptmenue extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			String cmd = e.getActionCommand();
 			
-			//Wenn für Spieler eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler1 erzeugt
-			if(cmd.equals("Spiel starten!"))
-				if(s1.isSelected())
-					if(name1.getText().equals(null))
-						/*EXCEPTION*/;
-					else {
-					Spieler.erstelleSpieler1(name1.getText(), (Icon)dropdowns1.getSelectedItem(),  0, 0f, 0f, 0, 0);
-				};
+			if(name1.getText().equals(""))
+				System.out.println("Auf Statusleiste \"Mindestens ein Spielername eintragen\" anzeigen");
+			else {
+				
+				//Wenn für Spieler eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler1 erzeugt
+				if(cmd.equals("Spiel starten!"))
+					if(s1.isSelected())
+						if(name1.getText().equals(null))
+							/*EXCEPTION*/;
+						else {
+						Spieler.erstelleSpieler1(name1.getText(), (Icon)dropdowns1.getSelectedItem(),  0, 0f, 0f, 0, 0);
+					};
 
-			//Wenn für Spieler 2 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler2 erzeugt
-			if(cmd.equals("Spiel starten!"))
-				if(s2.isSelected())
-					if(name2.getText().equals(null))
-						/*EXCEPTION*/;
-					else {
-						Spieler.erstelleSpieler2(name2.getText(), (Icon)dropdowns2.getSelectedItem(), 0, 0f, 0f, 0, 0);
+				//Wenn für Spieler 2 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler2 erzeugt
+				if(cmd.equals("Spiel starten!"))
+					if(s2.isSelected())
+						if(name2.getText().equals(null))
+							/*EXCEPTION*/;
+						else {
+							Spieler.erstelleSpieler2(name2.getText(), (Icon)dropdowns2.getSelectedItem(), 0, 0f, 0f, 0, 0);
+						}
+				//Wenn für Spieler 3 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler3 erzeugt
+				if(cmd.equals("Spiel starten!"))
+					if(s3.isSelected())
+						if(name3.getText().equals(null))
+							/*EXCEPTION*/;
+						else {
+						Spieler.erstelleSpieler3(name3.getText(), (Icon)dropdowns4.getSelectedItem(), 0, 0f, 0f, 0, 0);
 					}
-			//Wenn für Spieler 3 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler3 erzeugt
-			if(cmd.equals("Spiel starten!"))
-				if(s3.isSelected())
-					if(name3.getText().equals(null))
-						/*EXCEPTION*/;
-					else {
-					Spieler.erstelleSpieler3(name3.getText(), (Icon)dropdowns4.getSelectedItem(), 0, 0f, 0f, 0, 0);
+		
+				//Wenn für Spieler 4 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler4 erzeugt
+				if(cmd.equals("Spiel starten!"))
+					if(s4.isSelected())
+						if(name4.getText().equals(null))
+							/*EXCEPTION*/;
+						else {
+						Spieler.erstelleSpieler4(name4.getText(), (Icon)dropdowns4.getSelectedItem(), 0, 0f, 0f, 0, 0);
+					}
+				
+				if(cmd.equals("Spiel starten!")) {
+					Spielscreen screen = new Spielscreen(32);
+					screen.setVisible(true);
+//					TODO Hauptmenue muss beendet werden
+					
 				}
-	
-			//Wenn für Spieler 4 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler4 erzeugt
-			if(cmd.equals("Spiel starten!"))
-				if(s4.isSelected())
-					if(name4.getText().equals(null))
-						/*EXCEPTION*/;
-					else {
-					Spieler.erstelleSpieler4(name4.getText(), (Icon)dropdowns4.getSelectedItem(), 0, 0f, 0f, 0, 0);
-				}
+			}
+				
 	}
 	};
 	
@@ -119,7 +132,7 @@ public class Hauptmenue extends JFrame {
 	private JComboBox <Object> dropdowns1, dropdowns2, dropdowns3, dropdowns4;
 	private JRadioButton sehrleicht, leicht, mittel, schwer, sehrschwer;
 	private JCheckBox s1, s2, s3, s4;
-	private JLabel spielerlabel1, spielerlabel2, spielerlabel3, spielerlabel4;
+	private JLabel spielerlabel1, spielerlabel2, spielerlabel3, spielerlabel4, status;
 	private JTextField name1, name2, name3, name4;
 	private JButton reset, start;
 	
@@ -379,6 +392,7 @@ public Hauptmenue (){
 
 public static void main(String[] args){
 	
-	new Hauptmenue ();
+	Hauptmenue hm = new Hauptmenue ();
+	hm.setVisible(true);
 }
 }
