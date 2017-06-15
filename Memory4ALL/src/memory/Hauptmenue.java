@@ -272,11 +272,6 @@ public Hauptmenue (){
 	Image glumanderresize = glumandergetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 	ImageIcon glumander = new ImageIcon(glumanderresize);
 
-//	ImageIcon bisasameinfuegen = new ImageIcon(path+"002-bullbasaur.png");
-//	Image bisasamgetter = bisasameinfuegen.getImage();
-//	Image bisasamresize = bisasamgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-//	ImageIcon bisasam = new ImageIcon(bisasamresize);
-
 	ImageIcon relaxoeinfuegen = new ImageIcon(path+"004-snorlax.png");
 	Image relaxogetter = relaxoeinfuegen.getImage();
 	Image relaxoresize = relaxogetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
