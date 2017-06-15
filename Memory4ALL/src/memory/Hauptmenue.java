@@ -72,7 +72,7 @@ public class Hauptmenue extends JFrame {
 	private ActionListener buttonListenerStart = new ActionListener() {
 
 		@Override
-		//TODO throw Exception
+//		TODO throw Exception
 		public void actionPerformed(ActionEvent e) {
 			String cmd = e.getActionCommand();
 			
@@ -199,31 +199,53 @@ public Hauptmenue (){
 	s1.setBackground(Color.yellow);;
 	s1.setSelected(true);
 	s1.setEnabled(false);
-	name1 = new JTextField(30);
-	name1.setFont(new Font("Serif", Font.PLAIN, 25));
+	if(name1 != null)	//Falls bereits ein Objekte spieler1 der Klasse Spieler erzeugt wurde
+	{
+		name1.setText(Spieler.getSpieler1().getName());
+	}
+	else {
+			name1 = new JTextField(30);
+			name1.setFont(new Font("Serif", Font.PLAIN, 25));
+	}
 	
 
 	s2 = new JCheckBox ();
 	s2.addItemListener(spieler2textfeld);
-	s2.setBackground(Color.orange);;
-	name2 = new JTextField(30);
-	name2.setFont(new Font("Serif", Font.PLAIN, 25));
+	s2.setBackground(Color.orange);
+	if(name2 != null)	//Falls bereits ein Objekte spieler2 der Klasse Spieler erzeugt wurde
+	{
+		name2.setText(Spieler.getSpieler2().getName());
+	}
+	else {
+		name2 = new JTextField(30);
+		name2.setFont(new Font("Serif", Font.PLAIN, 25));
+	}
 	name2.setEditable(false);
-	
 
 	s3 = new JCheckBox ();
 	s3.addItemListener(spieler3textfeld);
 	s3.setBackground(Color.pink);
-	name3 = new JTextField(30);
-	name3.setFont(new Font("Serif", Font.PLAIN, 25));
+	if(name3 != null)	//Falls bereits ein Objekte spieler3 der Klasse Spieler erzeugt wurde
+	{
+		name3.setText(Spieler.getSpieler3().getName());
+	}
+	else {
+		name3 = new JTextField(30);
+		name3.setFont(new Font("Serif", Font.PLAIN, 25));
+	}
 	name3.setEditable(false);
-	
 
 	s4 = new JCheckBox ();
 	s4.addItemListener(spieler4textfeld);
 	s4.setBackground(Color.magenta);
-	name4 = new JTextField(30);
-	name4.setFont(new Font("Serif", Font.PLAIN, 25));
+	if(name4 != null)	//Falls bereits ein Objekte spieler4 der Klasse Spieler erzeugt wurde
+	{
+		name4.setText(Spieler.getSpieler4().getName());
+	}
+	else {
+		name4 = new JTextField(30);
+		name4.setFont(new Font("Serif", Font.PLAIN, 25));
+	}
 	name4.setEditable(false);
 	
 	// Label fuer Spieler
