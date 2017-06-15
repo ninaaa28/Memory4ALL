@@ -58,6 +58,11 @@ public class Hauptmenue extends JFrame {
 			name2.setText("");
 			name3.setText("");
 			name4.setText("");
+			dropdowns1.setSelectedIndex(1);
+			dropdowns2.setSelectedIndex(2);
+			dropdowns3.setSelectedIndex(3);
+			dropdowns4.setSelectedIndex(4);
+			sehrleicht.setSelected(true); 
 			
 		}
 		
