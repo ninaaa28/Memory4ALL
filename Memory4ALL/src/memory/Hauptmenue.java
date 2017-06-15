@@ -132,7 +132,7 @@ public class Hauptmenue extends JFrame {
 	private JComboBox <Object> dropdowns1, dropdowns2, dropdowns3, dropdowns4;
 	private JRadioButton sehrleicht, leicht, mittel, schwer, sehrschwer;
 	private JCheckBox s1, s2, s3, s4;
-	private JLabel spielerlabel1, spielerlabel2, spielerlabel3, spielerlabel4, status;
+	private JLabel spielerlabel1, spielerlabel2, spielerlabel3, spielerlabel4;
 	private JTextField name1, name2, name3, name4;
 	private JButton reset, start;
 	
