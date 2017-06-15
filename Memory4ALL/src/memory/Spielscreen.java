@@ -89,25 +89,36 @@ public class Spielscreen extends JFrame {
 		ImageIcon schiggi = new ImageIcon(schiggiresize);
 		JLabel schiggibild = new JLabel(schiggi);
 
+//		TODO Dummy-Daten ersetzen
 		// Spielerinformationen Spieler 1
+//		spieler1 = new JPanel(new GridLayout(3, 1));
+//		spieler1.add(new JLabel("Spieler 1: " + Spieler.getSpieler1().getName()));
+//		spieler1.add(new JLabel("Zeit: " + Spieler.getSpieler1().getSpielzeit()));
+//		spieler1.add(new Label("Spielzuege: " + Spieler.getSpieler1().getNo_zuege()));
+//		spieler1.setBackground(Color.red);
+		
 		spieler1 = new JPanel(new GridLayout(3, 1));
-		spieler1.add(new JLabel("Spieler 1: " + Spieler.getSpieler1().getName()));
-		spieler1.add(new JLabel("Zeit: " + Spieler.getSpieler1().getSpielzeit()));
-		spieler1.add(new Label("Spielzuege: " + Spieler.getSpieler1().getNo_zuege()));
+		spieler1.add(new JLabel("Spieler 1"));
+		spieler1.add(new JLabel("Zeit: 7:15"));
+		spieler1.add(new Label("Spielzuege: 24"));
 		spieler1.setBackground(Color.red);
 
-		// TODO Dummy-Daten ersetzen
+//		TODO Dummy-Daten ersetzen
 		// Spielerinformationen Spieler 3
-		if(Spieler.getSpieler3().getName().equals(null))	//Objekte "spieler3" wird nur erzeugt, wenn für Spieler 3 ein Name im Hauptmunue eingegeben wurde
-//		TODO Exception!!
-			;
-		else {	//Objekte "spieler3" wird erzeugt und auf Spielscreen angezeigt
-			spieler3 = new JPanel(new GridLayout(3, 1));
-			spieler3.add(new JLabel("Spieler 3: " + Spieler.getSpieler3().getName()));
-			spieler3.add(new JLabel("Zeit: " + Spieler.getSpieler3().getSpielzeit()));
-			spieler3.add(new Label("Spielzuege: " + Spieler.getSpieler3().getNo_zuege()));
-			spieler3.setBackground(Color.cyan);
-		}
+//		if(Spieler.getSpieler3().equals(null))
+//		spieler3 = new JPanel(new GridLayout(3, 1));
+//		spieler3.add(new JLabel("Spieler 3: " + Spieler.getSpieler3().getName()));
+//		spieler3.add(new JLabel("Zeit: " + Spieler.getSpieler3().getSpielzeit()));
+//		spieler3.add(new Label("Spielzuege: " + Spieler.getSpieler3().getNo_zuege()));
+//		spieler3.setBackground(Color.cyan);
+		
+		spieler3 = new JPanel(new GridLayout(3, 1));
+		spieler3.add(new JLabel("Spieler 3"));
+		spieler3.add(new JLabel("Zeit: 12:45"));
+		spieler3.add(new Label("Spielzuege: 24"));
+		spieler3.setBackground(Color.cyan);
+
+			spieler3.setEnabled(true);
 
 		// Bilderfassung Spieler 3
 		//ImageIcon glumandereinfuegen = new ImageIcon(path + "003-charmander.png");
@@ -162,15 +173,19 @@ public class Spielscreen extends JFrame {
 
 		pack();
 
+//		TODO Dummy-Daten ersetzen
 		// Spielerinformation Spieler 2
-		if(Spieler.getSpieler2().equals(null));		//Zusammenfassung geschieht nur, wenn das Objekte "spieler2" erzeugt wurde
-		else {
-			spieler2 = new JPanel(new GridLayout(3, 1));
-			spieler2.add(new JLabel("Spieler 2: " + Spieler.getSpieler2().getName()));
-			spieler2.add(new JLabel("Zeit: " + Spieler.getSpieler2().getSpielzeit()));
-			spieler2.add(new Label("Spielzuege: " + Spieler.getSpieler2().getNo_zuege()));
-			spieler2.setBackground(Color.green);
-		}
+//		spieler2 = new JPanel(new GridLayout(3, 1));
+//		spieler2.add(new JLabel("Spieler 2: " + Spieler.getSpieler2().getName()));
+//		spieler2.add(new JLabel("Zeit: " + Spieler.getSpieler2().getSpielzeit()));
+//		spieler2.add(new Label("Spielzuege: " + Spieler.getSpieler2().getNo_zuege()));
+//		spieler2.setBackground(Color.green);
+		
+		spieler2 = new JPanel(new GridLayout(3, 1));
+		spieler2.add(new JLabel("Spieler 2"));
+		spieler2.add(new JLabel("Zeit: 11:14"));
+		spieler2.add(new Label("Spielzuege: 77"));
+		spieler2.setBackground(Color.green);
 
 		// Bilderfassung Spieler 2
 		ImageIcon bisasameinfuegen = new ImageIcon(path + "002-bullbasaur.png");
@@ -188,13 +203,18 @@ public class Spielscreen extends JFrame {
 		JLabel pikachubild = new JLabel(pikachu);
 		pikachubild.setBackground(Color.yellow);
 
+//		TODO Dummy-Daten ersetzen
 		// Spielerinformation Spieler 4
-		if(Spieler.getSpieler4().equals(null));		//Zusammenfassung geschieht nur, wenn das Objekte "spieler4" erzeugt wurde
-		else {
+//		spieler4 = new JPanel(new GridLayout(3, 1));
+//		spieler4.add(new JLabel("Spieler 4: " + Spieler.getSpieler4().getName()));
+//		spieler4.add(new JLabel("Zeit: " + Spieler.getSpieler4().getSpielzeit()));
+//		spieler4.add(new Label("Spielzuege: " + Spieler.getSpieler4().getNo_zuege()));
+//		spieler4.setBackground(Color.yellow);
+		
 		spieler4 = new JPanel(new GridLayout(3, 1));
-		spieler4.add(new JLabel("Spieler 4: " + Spieler.getSpieler4().getName()));
-		spieler4.add(new JLabel("Zeit: " + Spieler.getSpieler4().getSpielzeit()));
-		spieler4.add(new Label("Spielzuege: " + Spieler.getSpieler4().getNo_zuege()));
+		spieler4.add(new JLabel("Spieler 4"));
+		spieler4.add(new JLabel("Zeit: 19:44"));
+		spieler4.add(new Label("Spielzuege: 11"));
 		spieler4.setBackground(Color.yellow);
 
 		// Zusammenfassung Spieler 2,4
@@ -241,8 +261,6 @@ public class Spielscreen extends JFrame {
 		setBounds(400, 50, 1100, 750);
 		setResizable(true);
 		}
-
-	}
 
 	public static void main(String[] args) {
 
