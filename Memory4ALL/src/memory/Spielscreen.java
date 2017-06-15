@@ -91,34 +91,23 @@ public class Spielscreen extends JFrame {
 
 //		TODO Dummy-Daten ersetzen
 		// Spielerinformationen Spieler 1
-//		spieler1 = new JPanel(new GridLayout(3, 1));
-//		spieler1.add(new JLabel("Spieler 1: " + Spieler.getSpieler1().getName()));
-//		spieler1.add(new JLabel("Zeit: " + Spieler.getSpieler1().getSpielzeit()));
-//		spieler1.add(new Label("Spielzuege: " + Spieler.getSpieler1().getNo_zuege()));
-//		spieler1.setBackground(Color.red);
-		
-		spieler1 = new JPanel(new GridLayout(3, 1));
-		spieler1.add(new JLabel("Spieler 1"));
-		spieler1.add(new JLabel("Zeit: 7:15"));
-		spieler1.add(new Label("Spielzuege: 24"));
-		spieler1.setBackground(Color.red);
+		if(Spieler.getListe().contains(Spieler.getSpieler1())) {
+			spieler1 = new JPanel(new GridLayout(3, 1));
+			spieler1.add(new JLabel("Spieler 1 : " + Spieler.getSpieler1().getName()));
+			spieler1.add(new JLabel("Zeit : " + Spieler.getSpieler1().getSpielzeit()));
+			spieler1.add(new Label("Spielzuege : " + Spieler.getSpieler1().getNo_zuege()));
+			spieler1.setBackground(Color.red);
+		}
 
 //		TODO Dummy-Daten ersetzen
 		// Spielerinformationen Spieler 3
-//		if(Spieler.getSpieler3().equals(null))
-//		spieler3 = new JPanel(new GridLayout(3, 1));
-//		spieler3.add(new JLabel("Spieler 3: " + Spieler.getSpieler3().getName()));
-//		spieler3.add(new JLabel("Zeit: " + Spieler.getSpieler3().getSpielzeit()));
-//		spieler3.add(new Label("Spielzuege: " + Spieler.getSpieler3().getNo_zuege()));
-//		spieler3.setBackground(Color.cyan);
-		
-		spieler3 = new JPanel(new GridLayout(3, 1));
-		spieler3.add(new JLabel("Spieler 3"));
-		spieler3.add(new JLabel("Zeit: 12:45"));
-		spieler3.add(new Label("Spielzuege: 24"));
-		spieler3.setBackground(Color.cyan);
-
-			spieler3.setEnabled(true);
+		if(Spieler.getListe().contains(Spieler.getSpieler3())) {
+			spieler3 = new JPanel(new GridLayout(3, 1));
+			spieler3.add(new JLabel("Spieler 3: " + Spieler.getSpieler3().getName()));
+			spieler3.add(new JLabel("Zeit: " + Spieler.getSpieler3().getSpielzeit()));
+			spieler3.add(new Label("Spielzuege: " + Spieler.getSpieler3().getNo_zuege()));
+			spieler3.setBackground(Color.cyan);
+		}
 
 		// Bilderfassung Spieler 3
 		//ImageIcon glumandereinfuegen = new ImageIcon(path + "003-charmander.png");
@@ -127,11 +116,9 @@ public class Spielscreen extends JFrame {
 		//ImageIcon glumander = new ImageIcon(glumanderresize);
 		JLabel glumanderbild = new JLabel(new ImageIcon(path + "001-squirtle2.png"));
 		
-		
 
 		// Zusammenfassung der Spieler 1,3
-		if(spieler3.equals(null));		//Zusammenfassung geschieht nur, wenn das Objekte "spieler3" erzeugt wurde
-		else {
+		if(Spieler.getListe().contains(Spieler.getSpieler3())) {		//Zusammenfassung geschieht nur, wenn das Objekte "spieler3" erzeugt wurde
 			spielerleiste13 = new JPanel(new GridLayout(4, 1));
 			spielerleiste13.add(schiggibild);
 			spielerleiste13.add(spieler1);
@@ -175,17 +162,23 @@ public class Spielscreen extends JFrame {
 
 //		TODO Dummy-Daten ersetzen
 		// Spielerinformation Spieler 2
-//		spieler2 = new JPanel(new GridLayout(3, 1));
-//		spieler2.add(new JLabel("Spieler 2: " + Spieler.getSpieler2().getName()));
-//		spieler2.add(new JLabel("Zeit: " + Spieler.getSpieler2().getSpielzeit()));
-//		spieler2.add(new Label("Spielzuege: " + Spieler.getSpieler2().getNo_zuege()));
-//		spieler2.setBackground(Color.green);
+		if(Spieler.getListe().contains(Spieler.getSpieler2())) { 
+			spieler2 = new JPanel(new GridLayout(3, 1));
+			spieler2.add(new JLabel("Spieler 2: " + Spieler.getSpieler2().getName()));
+			spieler2.add(new JLabel("Zeit: " + Spieler.getSpieler2().getSpielzeit()));
+			spieler2.add(new Label("Spielzuege: " + Spieler.getSpieler2().getNo_zuege()));
+			spieler2.setBackground(Color.green);
+		}
 		
-		spieler2 = new JPanel(new GridLayout(3, 1));
-		spieler2.add(new JLabel("Spieler 2"));
-		spieler2.add(new JLabel("Zeit: 11:14"));
-		spieler2.add(new Label("Spielzuege: 77"));
-		spieler2.setBackground(Color.green);
+//		TODO Dummy-Daten ersetzen
+		// Spielerinformation Spieler 4
+		if(Spieler.getListe().contains(Spieler.getSpieler4())) {
+		spieler4 = new JPanel(new GridLayout(3, 1));
+		spieler4.add(new JLabel("Spieler 4: " + Spieler.getSpieler4().getName()));
+		spieler4.add(new JLabel("Zeit: " + Spieler.getSpieler4().getSpielzeit()));
+		spieler4.add(new Label("Spielzuege: " + Spieler.getSpieler4().getNo_zuege()));
+		spieler4.setBackground(Color.yellow);
+		}
 
 		// Bilderfassung Spieler 2
 		ImageIcon bisasameinfuegen = new ImageIcon(path + "002-bullbasaur.png");
@@ -203,26 +196,14 @@ public class Spielscreen extends JFrame {
 		JLabel pikachubild = new JLabel(pikachu);
 		pikachubild.setBackground(Color.yellow);
 
-//		TODO Dummy-Daten ersetzen
-		// Spielerinformation Spieler 4
-//		spieler4 = new JPanel(new GridLayout(3, 1));
-//		spieler4.add(new JLabel("Spieler 4: " + Spieler.getSpieler4().getName()));
-//		spieler4.add(new JLabel("Zeit: " + Spieler.getSpieler4().getSpielzeit()));
-//		spieler4.add(new Label("Spielzuege: " + Spieler.getSpieler4().getNo_zuege()));
-//		spieler4.setBackground(Color.yellow);
-		
-		spieler4 = new JPanel(new GridLayout(3, 1));
-		spieler4.add(new JLabel("Spieler 4"));
-		spieler4.add(new JLabel("Zeit: 19:44"));
-		spieler4.add(new Label("Spielzuege: 11"));
-		spieler4.setBackground(Color.yellow);
-
 		// Zusammenfassung Spieler 2,4
-		if(spieler2.equals(null) || spieler4.equals(null));
-		else {
+		if(Spieler.getListe().contains(Spieler.getSpieler2())) {
 			spielerleiste24 = new JPanel(new GridLayout(4, 1));
 			spielerleiste24.add(bisasambild);
 			spielerleiste24.add(spieler2);
+		}
+		
+		if(Spieler.getListe().contains(Spieler.getSpieler4())) {
 			spielerleiste24.add(spieler4);
 			spielerleiste24.add(pikachubild);
 		}
@@ -250,10 +231,22 @@ public class Spielscreen extends JFrame {
 
 		// Layout fuer das Frame
 		getContentPane().add(m, BorderLayout.NORTH);
-		getContentPane().add(spielerleiste13, BorderLayout.WEST);
+		if(Spieler.getListe().contains(Spieler.getSpieler3()))
+			getContentPane().add(spielerleiste13, BorderLayout.WEST);
+		else {
+			getContentPane().add(spieler1, BorderLayout.WEST);
+		}
 		getContentPane().add(spielfeld, BorderLayout.CENTER);
 
-		getContentPane().add(spielerleiste24, BorderLayout.EAST);
+		if(Spieler.getListe().contains(Spieler.getSpieler2()) && Spieler.getListe().contains(Spieler.getSpieler4()))	//Wenn Objekt spierler2 (Klasse Spieler) und Objekt spiler4 (Klasse Spieler) erzeugt wurden
+			getContentPane().add(spielerleiste24, BorderLayout.EAST);
+		else {
+			if(Spieler.getListe().contains(Spieler.getSpieler2()))
+				getContentPane().add(spieler2, BorderLayout.EAST);
+			if(Spieler.getListe().contains(Spieler.getSpieler4()))
+				getContentPane().add(spieler2, BorderLayout.EAST);
+		}
+		
 		getContentPane().add(buttons, BorderLayout.SOUTH);
 
 		// Weitere Konfigurationen fuer das Frame

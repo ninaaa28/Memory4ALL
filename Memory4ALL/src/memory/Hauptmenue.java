@@ -122,7 +122,6 @@ public class Hauptmenue extends JFrame {
 					Spielscreen screen = new Spielscreen(32);
 					screen.setVisible(true);
 //					TODO Hauptmenue muss beendet werden
-					
 				}
 			}
 				
