@@ -2,6 +2,8 @@ package memory;
 
 import java.util.*;
 
+import javax.swing.Icon;
+
 public class Spieler {
 	
 	private static Spieler spieler1;
@@ -10,7 +12,7 @@ public class Spieler {
 	private static Spieler spieler4;
 	
 //	TODO Attribut "Avatar" (Bild des Spielers hinzufügen
-//	private avartar;
+	private Icon avatar;
 	private String name;				//Name von "Spieler"
 	private int no_zuege;				//Anzhal (number of = no) der Züge von "Spieler"
 	private float spielzeit;			//gesamte Spielzeit von "Spieler"
@@ -20,8 +22,9 @@ public class Spieler {
 	
 	
 	//Konstruktor von "Spieler"
-	public Spieler(	String name, int no_zuege, float spielzeit, float zeit_pro_zug, int no_paerchen, int plazierung){
+	public Spieler(	String name, Icon avatar, int no_zuege, float spielzeit, float zeit_pro_zug, int no_paerchen, int plazierung){
 		this.name = name;
+		this.avatar = avatar;
 		this.no_zuege = no_zuege;
 		this.spielzeit = spielzeit;
 		this.zeit_pro_zug = zeit_pro_zug;
@@ -33,32 +36,32 @@ public class Spieler {
 	public static ArrayList<Spieler> liste = new ArrayList<Spieler>();
 	
 	//Spieler1 wird erzeugt - Aufruf durch Hauptmenue-Klasse
-	public static void erstelleSpieler1(String name, int no_zuege, float spielzeit, 
+	public static void erstelleSpieler1(String name, Icon avatar, int no_zuege, float spielzeit, 
 											float zeit_pro_zug, int no_paerchen, int plazierung) {
-		spieler1 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
+		spieler1 = new Spieler(name, avatar, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
 		liste.add(spieler1);
 	}
 
 	//Spieler2 wird erzeugt - Aufruf durch Hauptmenue-Klasse
-	public static void erstelleSpieler2(String name, int no_zuege, float spielzeit, 
+	public static void erstelleSpieler2(String name, Icon avatar, int no_zuege, float spielzeit, 
 											float zeit_pro_zug, int no_paerchen, int plazierung) {
-		spieler2 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
+		spieler2 = new Spieler(name, avatar, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
 		liste.add(spieler2);
 
 }
 
 	//Spieler3 wird erzeugt - Aufruf durch Hauptmenue-Klasse
-	public static void erstelleSpieler3(String name, int no_zuege, float spielzeit, 
+	public static void erstelleSpieler3(String name, Icon avatar, int no_zuege, float spielzeit, 
 											float zeit_pro_zug, int no_paerchen, int plazierung) {
-		spieler3 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
+		spieler3 = new Spieler(name, avatar, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
 		liste.add(spieler3);
 
 }
 
 	//Spieler4 wird erzeugt - Aufruf durch Hauptmenue-Klasse
-	public static void erstelleSpieler4(String name, int no_zuege, float spielzeit, 
+	public static void erstelleSpieler4(String name, Icon avatar, int no_zuege, float spielzeit, 
 											float zeit_pro_zug, int no_paerchen, int plazierung) {
-		spieler4 = new Spieler(name, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
+		spieler4 = new Spieler(name, avatar, no_zuege, spielzeit, zeit_pro_zug, no_paerchen, plazierung);
 		liste.add(spieler4);
 
 }
@@ -135,4 +138,54 @@ public class Spieler {
 	public void setPlazierung(int plazierung) {
 		this.plazierung = plazierung;
 	}
+
+	public static Spieler getSpieler1() {
+		return spieler1;
+	}
+
+	public static void setSpieler1(Spieler spieler1) {
+		Spieler.spieler1 = spieler1;
+	}
+
+	public static Spieler getSpieler2() {
+		return spieler2;
+	}
+
+	public static void setSpieler2(Spieler spieler2) {
+		Spieler.spieler2 = spieler2;
+	}
+
+	public static Spieler getSpieler3() {
+		return spieler3;
+	}
+
+	public static void setSpieler3(Spieler spieler3) {
+		Spieler.spieler3 = spieler3;
+	}
+
+	public static Spieler getSpieler4() {
+		return spieler4;
+	}
+
+	public static void setSpieler4(Spieler spieler4) {
+		Spieler.spieler4 = spieler4;
+	}
+
+	public Icon getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(Icon avatar) {
+		this.avatar = avatar;
+	}
+
+	public static ArrayList<Spieler> getListe() {
+		return liste;
+	}
+
+	public static void setListe(ArrayList<Spieler> liste) {
+		Spieler.liste = liste;
+	}
+	
+	
 }

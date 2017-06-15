@@ -77,8 +77,7 @@ public class Hauptmenue extends JFrame {
 					if(name1.getText().equals(null))
 						/*EXCEPTION*/;
 					else {
-					Spieler.erstelleSpieler1(name1.getText(), 0, 0f, 0f, 0, 0);
-					System.out.println("Spieler1 " + name1.getText() + " wurde erstellt");
+					Spieler.erstelleSpieler1(name1.getText(), (Icon)dropdowns1.getSelectedItem(),  0, 0f, 0f, 0, 0);
 				};
 
 			//Wenn für Spieler 2 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler2 erzeugt
@@ -87,8 +86,7 @@ public class Hauptmenue extends JFrame {
 					if(name2.getText().equals(null))
 						/*EXCEPTION*/;
 					else {
-						Spieler.erstelleSpieler2(name2.getText(), 0, 0f, 0f, 0, 0);
-						System.out.println("Spieler2 " + name2.getText() + "  wurde erstellt");
+						Spieler.erstelleSpieler2(name2.getText(), (Icon)dropdowns2.getSelectedItem(), 0, 0f, 0f, 0, 0);
 					}
 			//Wenn für Spieler 3 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler3 erzeugt
 			if(cmd.equals("Spiel starten!"))
@@ -96,8 +94,7 @@ public class Hauptmenue extends JFrame {
 					if(name3.getText().equals(null))
 						/*EXCEPTION*/;
 					else {
-					Spieler.erstelleSpieler3(name3.getText(), 0, 0f, 0f, 0, 0);
-					System.out.println("Spieler3  " + name3.getText() + " wurde erstellt");
+					Spieler.erstelleSpieler3(name3.getText(), (Icon)dropdowns4.getSelectedItem(), 0, 0f, 0f, 0, 0);
 				}
 	
 			//Wenn für Spieler 4 eine Name eingegeben wurde, wird ein Spieler-Objekt Spieler4 erzeugt
@@ -106,8 +103,7 @@ public class Hauptmenue extends JFrame {
 					if(name4.getText().equals(null))
 						/*EXCEPTION*/;
 					else {
-					Spieler.erstelleSpieler4(name4.getText(), 0, 0f, 0f, 0, 0);
-					System.out.println("Spieler4  " + name4.getText() + " wurde erstellt");
+					Spieler.erstelleSpieler4(name4.getText(), (Icon)dropdowns4.getSelectedItem(), 0, 0f, 0f, 0, 0);
 				}
 	}
 	};
