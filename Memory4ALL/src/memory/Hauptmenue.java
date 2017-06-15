@@ -137,6 +137,8 @@ public class Hauptmenue extends JFrame {
 	private JLabel spielerlabel1, spielerlabel2, spielerlabel3, spielerlabel4;
 	private JTextField name1, name2, name3, name4;
 	private JButton reset, start;
+	private ImageIcon schiggi, glumander, relaxo, pikachu, mauzi, monkey, venomat, ratzfratz, pidget, mew, puff, evoli ;
+	
 	
 	
 public Hauptmenue (){
@@ -301,70 +303,23 @@ public Hauptmenue (){
 	
 	// Bilder fuer das Dropdowns
 	String path = System.getProperty("user.dir")+"\\src\\memory\\Bilder\\";
-	
-	ImageIcon schiggieinfuegen = new ImageIcon(path+"001-squirtle.png");
-	Image schiggigetter = schiggieinfuegen.getImage();
-	Image schiggiresize = schiggigetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon schiggi = new ImageIcon(schiggiresize);
 
-	
-	ImageIcon glumandereinfuegen =  new ImageIcon (path+"002-bullbasaur.png");
-	Image glumandergetter = glumandereinfuegen.getImage();
-	Image glumanderresize = glumandergetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon glumander = new ImageIcon(glumanderresize);
+    schiggi = new ImageIcon(new ImageIcon(path+"001-squirtle.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    glumander = new ImageIcon(new ImageIcon(path+"002-bullbasaur.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    relaxo = new ImageIcon(new ImageIcon(path+"004-snorlax.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    pikachu = new ImageIcon(new ImageIcon(path+"005-pikachu.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    mauzi = new ImageIcon(new ImageIcon(path+"006-avatar.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    monkey = new ImageIcon(new ImageIcon(path+"007-mankey.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    venomat = new ImageIcon(new ImageIcon(path+"008-venomat.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    ratzfratz = new ImageIcon(new ImageIcon(path+"009-rattata.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    pidget = new ImageIcon(new ImageIcon(path+"010-pidgey.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    mew = new ImageIcon(new ImageIcon(path+"011-sqirtle.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    evoli = new ImageIcon(new ImageIcon(path+"012-eevee.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+    puff = new ImageIcon(new ImageIcon(path+"013-jigglypuff.png").getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
 
-	ImageIcon relaxoeinfuegen = new ImageIcon(path+"004-snorlax.png");
-	Image relaxogetter = relaxoeinfuegen.getImage();
-	Image relaxoresize = relaxogetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon relaxo = new ImageIcon(relaxoresize);
 
-	ImageIcon pikachueinfuegen = new ImageIcon(path+"005-pikachu.png");
-	Image pikachugetter = pikachueinfuegen.getImage();
-	Image pikachuresize = pikachugetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon pikachu = new ImageIcon(pikachuresize);
-
-	ImageIcon mauzieinfuegen = new ImageIcon(path+"006-avatar.png");
-	Image mauzigetter = mauzieinfuegen.getImage();
-	Image mauziresize = mauzigetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon mauzi = new ImageIcon(mauziresize);
-
-	ImageIcon monkeyeinfuegen = new ImageIcon(path+"007-mankey.png");
-	Image monkeygetter = monkeyeinfuegen.getImage();
-	Image monkeyresize = monkeygetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon monkey = new ImageIcon(monkeyresize);
-
-	ImageIcon venomateinfuegen = new ImageIcon(path+"008.venomat.png");
-	Image venomatgetter = venomateinfuegen.getImage();
-	Image venomatresize = venomatgetter.getScaledInstance(90, 90, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon venomat = new ImageIcon(venomatresize);
-
-	ImageIcon ratfratzeinfuegen = new ImageIcon(path+"009-rattata.png");
-	Image ratfratzgetter = ratfratzeinfuegen.getImage();
-	Image ratfratzresize = ratfratzgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon ratfratz = new ImageIcon(ratfratzresize);
-
-	ImageIcon taubsieinfuegen = new ImageIcon(path+"010-pidgey.png");
-	Image taubsigetter = taubsieinfuegen.getImage();
-	Image taubsiresize = taubsigetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon taubsi = new ImageIcon(taubsiresize);
-
-	ImageIcon meweinfuegen = new ImageIcon(path+"011-sqirtle.png");
-	Image mewgetter = meweinfuegen.getImage();
-	Image mewresize = mewgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon mew = new ImageIcon(mewresize);
-
-	ImageIcon evolieinfuegen = new ImageIcon(path+"012-eevee.png");
-	Image evoligetter = evolieinfuegen.getImage();
-	Image evoliresize = evoligetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon evoli = new ImageIcon(evoliresize);
-
-	ImageIcon puffeinfuegen = new ImageIcon(path+"013-jigglypuff.png");
-	Image puffgetter = puffeinfuegen.getImage();
-	Image puffresize = puffgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon puff = new ImageIcon(puffresize);
-
-	ImageIcon[] sammlung = { schiggi, glumander, relaxo, pikachu, puff, evoli, taubsi, venomat, monkey,
-			mew, ratfratz, mauzi };
+	ImageIcon[] sammlung = { schiggi, glumander, relaxo, pikachu, puff, evoli, pidget, venomat, monkey,
+			mew, ratzfratz, mauzi };
 	
 	// Dropdown Menues
 	dropdowns1 = new JComboBox<Object>(sammlung);
