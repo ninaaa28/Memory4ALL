@@ -272,10 +272,10 @@ public Hauptmenue (){
 	Image glumanderresize = glumandergetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 	ImageIcon glumander = new ImageIcon(glumanderresize);
 
-	ImageIcon bisasameinfuegen = new ImageIcon(path+"002-bullbasaur.png");
-	Image bisasamgetter = bisasameinfuegen.getImage();
-	Image bisasamresize = bisasamgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-	ImageIcon bisasam = new ImageIcon(bisasamresize);
+//	ImageIcon bisasameinfuegen = new ImageIcon(path+"002-bullbasaur.png");
+//	Image bisasamgetter = bisasameinfuegen.getImage();
+//	Image bisasamresize = bisasamgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+//	ImageIcon bisasam = new ImageIcon(bisasamresize);
 
 	ImageIcon relaxoeinfuegen = new ImageIcon(path+"004-snorlax.png");
 	Image relaxogetter = relaxoeinfuegen.getImage();
@@ -327,14 +327,18 @@ public Hauptmenue (){
 	Image puffresize = puffgetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
 	ImageIcon puff = new ImageIcon(puffresize);
 
-	ImageIcon[] sammlung = { schiggi, glumander, relaxo, bisasam, pikachu, puff, evoli, taubsi, venomat, monkey,
+	ImageIcon[] sammlung = { schiggi, glumander, relaxo, pikachu, puff, evoli, taubsi, venomat, monkey,
 			mew, ratfratz, mauzi };
 	
 	// Dropdown Menues
 	dropdowns1 = new JComboBox<Object>(sammlung);
+	dropdowns1.setSelectedIndex(1);
 	dropdowns2 = new JComboBox<Object>(sammlung);
+	dropdowns2.setSelectedIndex(2);
 	dropdowns3 = new JComboBox<Object>(sammlung);
+	dropdowns3.setSelectedIndex(3);
 	dropdowns4 = new JComboBox<Object>(sammlung);
+	dropdowns4.setSelectedIndex(4);
 
 	JPanel dropdown = new JPanel(new GridLayout(4, 1));
 	dropdown.add(dropdowns1);
