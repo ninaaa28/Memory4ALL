@@ -31,7 +31,7 @@ public class Spielscreen extends JFrame {
 		}
 	};
 	
-	//ActionListener buttonListener "Spiel starten"
+	//ActionListener buttonListener "Siel neu konfigurieren"
 	private ActionListener buttonListenerReset = new ActionListener() {
 
 		@Override
@@ -44,6 +44,20 @@ public class Spielscreen extends JFrame {
 					hm.setVisible(true);
 //					TODO Spielscreen muss beendet werden
 					
+				}
+		}
+	};
+	
+	//ActionListener buttonListener "Anwedung schlieﬂen"
+	private ActionListener buttonListenerClose = new ActionListener() {
+
+		@Override
+		//TODO throw Exception
+		public void actionPerformed(ActionEvent e) {
+			String cmd = e.getActionCommand();
+				
+				if(cmd.equals("Anwendung schliessen")) {
+					System.exit(0);
 				}
 		}
 	};
@@ -198,6 +212,7 @@ public class Spielscreen extends JFrame {
 		ngame.setFont(new Font("MS Gothic", Font.BOLD, 20));
 
 		close = new JButton("Anwendung schliessen");
+		close.addActionListener(buttonListenerClose);
 		close.setBackground(Color.red);
 		close.setFont(new Font("MS Gothic", Font.BOLD, 20));
 
