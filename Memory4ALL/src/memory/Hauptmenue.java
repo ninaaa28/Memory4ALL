@@ -19,6 +19,7 @@ public class Hauptmenue extends JFrame {
 				name2.setEditable(true);
 			else {
 				name2.setEditable(false);
+				name2.setText("");
 			}
 		}
 	};
@@ -29,6 +30,7 @@ public class Hauptmenue extends JFrame {
 				name3.setEditable(true);
 			else {
 				name3.setEditable(false);
+				name3.setText("");
 			}
 		}
 	};
@@ -40,6 +42,7 @@ public class Hauptmenue extends JFrame {
 				name4.setEditable(true);
 			else {
 				name4.setEditable(false);
+				name4.setText("");
 			}
 		}
 	};
@@ -206,8 +209,7 @@ public Hauptmenue (){
 	else {
 			name1 = new JTextField(30);
 			name1.setFont(new Font("Serif", Font.PLAIN, 25));
-	}
-	
+	}	
 
 	s2 = new JCheckBox ();
 	s2.addItemListener(spieler2textfeld);
