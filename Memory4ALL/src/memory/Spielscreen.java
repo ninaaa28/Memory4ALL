@@ -17,7 +17,7 @@ public class Spielscreen extends JFrame {
 	private JPanel spieler1, spieler2, spieler3, spieler4, spielerleiste13, spielerleiste24, buttons, spielfeld;
 	private JButton ngame, rgame, close;
 //	TODO je nach Schwierigkeitsgrad werden bestimmt viele Karten angezeigt
-	private int anzahlSpielkarten;
+	private int anzahlSpielkarten, bilderZähler;
 
 	//Nach klick auf eine Karte wird die Karte umgedreht
 	private ActionListener kartenUmdrehen = new ActionListener() {
@@ -43,7 +43,7 @@ public class Spielscreen extends JFrame {
 		}
 	};
 	
-	//ActionListener buttonListener "Anwedung schlie�en"
+	//ActionListener buttonListener "Anwedung schlie�en"
 	private ActionListener buttonListenerClose = new ActionListener() {
 
 		@Override
@@ -135,27 +135,31 @@ public class Spielscreen extends JFrame {
 		spielfeld = new JPanel();
 		spielfeld.setLayout(new GridLayout(8, 8));
 
-		// Hinzufuegen der Karten �ber eine Schleife
+		// Hinzufuegen der Karten �ber eine Schleife
 		this.anzahlSpielkarten = anzahlSpielkarten;
 		// nur fuer Testzwecke
 		JButton spielKarten[] = new JButton[anzahlSpielkarten];
 		JButton spielKartenFront[] = new JButton[anzahlSpielkarten];
+		SpielStein steine[]= new SpielStein[anzahlSpielkarten];
 
 		for (int i = 0; i < anzahlSpielkarten; i++) {
-			spielKarten[i] = new JButton("karte" + i);
-			spielKarten[i].setText("");
+			steine[i] = new SpielStein((new ImageIcon(path + i + ".png")), (new ImageIcon(path + "Rueckseite.png")), i);
+			spielKarten[i] = new JButton("karte" + steine[i].getIndex());
 			spielfeld.add(spielKarten[i]);
-			spielKarten[i].setSize(100, 100);
-			String tmpKarte = ("karte" + 1);
 			spielKarten[i].addActionListener(kartenUmdrehen);
-			spielKarten[i].setIcon (new ImageIcon(path + "Rueckseite.png"));
-			//spielKarten[i]. .getResource("pfeil.png")
+			spielKarten[i].setIcon(steine[i].getBack());
+			// Das jedes 2te Paar ein neues Bild bekommt, Rest = 0 da ZeroBased
+			// und bei Null anfängt
 
-//			Das jedes 2te Paar ein neues Bild bekommt, Rest = 0 da ZeroBased
-//			und bei Null anfängt
-//			if (i > 1 && i % 2 == 0) {
-//				System.out.println("Naechstes Bild " + i);
-//			}
+			if (i >= 1 && i % 2 == 0) {
+
+				System.out.println("Nächstes Bild " + i);
+				steine[i].setFront(new ImageIcon(path + bilderZähler + ".png"));
+				bilderZähler++;
+				System.out.println(steine[i].getFront().toString());
+
+			}
+
 		}
 
 		pack();
