@@ -129,7 +129,47 @@ public class Hauptmenue extends JFrame {
 	}
 	};
 	
+	private ActionListener buttonListenerAnleitung = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String cmd = e.getActionCommand();
+			if (cmd.equals("Anleitung")){
+				Anleitung anlei = new Anleitung ();
+				anlei.setVisible(true);
+			}
+			
+		}
+	};
+	
+	private ActionListener buttonListenerImpressum = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String cmd = e.getActionCommand();
+			if (cmd.equals("Impressum")){
+				Impressum impres = new Impressum ();
+				impres.setVisible(true);
+			}
+			
+		}
+	};
+	
+	private ActionListener buttonListenerKontakt = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String cmd = e.getActionCommand();
+			if (cmd.equals("Kontakt")){
+				Kontakt konta = new Kontakt ();
+				konta.setVisible(true);
+			}
+			
+		}
+	};
+	
 	private JMenu m1, m2;
+	private JMenuItem Anleitung, Impressum, Kontakt;
 	private JMenuBar m;
 	private JPanel schwierigkeit, spieler1, spieler2, spieler3, spieler4, spieler, buttons;
 	private JComboBox <Object> dropdowns1, dropdowns2, dropdowns3, dropdowns4;
@@ -155,13 +195,18 @@ public Hauptmenue (){
 	
 	// Menueelemente fuer den oberen Rand
 	m1 = new JMenu("Anleitung");
-	m1.add("Ansehen");
-	m1.add("Punkte ergänzen");
+	Anleitung = new JMenuItem ("Anleitung");
+	Anleitung.addActionListener(buttonListenerAnleitung);
+	m1.add(Anleitung);
 	m1.setBackground(Color.yellow);
 
-	m2 = new JMenu("Impressum");
-	m2.add("Ansehen");
-	m2.add("Kontakt aufnehmen");
+	m2 = new JMenu("Made by");
+	Impressum = new JMenuItem ("Impressum");
+	Impressum.addActionListener(buttonListenerImpressum);
+	m2.add("Impressum");
+	Kontakt = new JMenuItem ();
+	Kontakt.addActionListener(buttonListenerKontakt);
+	m2.add("Kontakt");
 	m2.setBackground(Color.yellow);
 
 	// Zusammenfassung der Menüleiste
