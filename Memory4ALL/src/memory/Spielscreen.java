@@ -89,7 +89,6 @@ public class Spielscreen extends JFrame {
 		ImageIcon schiggi = new ImageIcon(schiggiresize);
 		JLabel schiggibild = new JLabel(schiggi);
 
-//		TODO Dummy-Daten ersetzen
 		// Spielerinformationen Spieler 1
 		if(Spieler.getListe().contains(Spieler.getSpieler1())) {
 			spieler1 = new JPanel(new GridLayout(3, 1));
@@ -99,7 +98,6 @@ public class Spielscreen extends JFrame {
 			spieler1.setBackground(Color.red);
 		}
 
-//		TODO Dummy-Daten ersetzen
 		// Spielerinformationen Spieler 3
 		if(Spieler.getListe().contains(Spieler.getSpieler3())) {
 			spieler3 = new JPanel(new GridLayout(3, 1));
@@ -160,7 +158,6 @@ public class Spielscreen extends JFrame {
 
 		pack();
 
-//		TODO Dummy-Daten ersetzen
 		// Spielerinformation Spieler 2
 		if(Spieler.getListe().contains(Spieler.getSpieler2())) { 
 			spieler2 = new JPanel(new GridLayout(3, 1));
@@ -170,7 +167,6 @@ public class Spielscreen extends JFrame {
 			spieler2.setBackground(Color.green);
 		}
 		
-//		TODO Dummy-Daten ersetzen
 		// Spielerinformation Spieler 4
 		if(Spieler.getListe().contains(Spieler.getSpieler4())) {
 		spieler4 = new JPanel(new GridLayout(3, 1));

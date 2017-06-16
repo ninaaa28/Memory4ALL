@@ -11,7 +11,7 @@ public class Spieler {
 	private static Spieler spieler3;
 	private static Spieler spieler4;
 	
-//	TODO Attribut "Avatar" (Bild des Spielers hinzufügen
+//	TODO Attribut "Avatar" (Bild des Spielers hinzufüge
 	private Icon avatar;
 	private String name;				//Name von "Spieler"
 	private int no_zuege;				//Anzhal (number of = no) der Züge von "Spieler"

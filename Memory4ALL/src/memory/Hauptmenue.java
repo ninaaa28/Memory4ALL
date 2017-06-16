@@ -67,9 +67,7 @@ public class Hauptmenue extends JFrame {
 			dropdowns3.setSelectedIndex(3);
 			dropdowns4.setSelectedIndex(4);
 			sehrleicht.setSelected(true); 
-			
 		}
-		
 	};
 	
 	//ActionListener buttonListener "Spiel starten"
@@ -124,9 +122,8 @@ public class Hauptmenue extends JFrame {
 					screen.setVisible(true);
 //					TODO Hauptmenue muss beendet werden
 				}
-			}
-				
-	}
+			}	
+		}
 	};
 	
 	private JMenu m1, m2;
@@ -204,7 +201,7 @@ public Hauptmenue (){
 	s1.setBackground(Color.yellow);;
 	s1.setSelected(true);
 	s1.setEnabled(false);
-	if(name1 != null)	//Falls bereits ein Objekte spieler1 der Klasse Spieler erzeugt wurde
+	if(Spieler.getListe().contains(Spieler.getSpieler1()))	//Falls bereits ein Objekte spieler1 der Klasse Spieler erzeugt wurde
 	{
 		name1.setText(Spieler.getSpieler1().getName());
 	}
@@ -216,7 +213,7 @@ public Hauptmenue (){
 	s2 = new JCheckBox ();
 	s2.addItemListener(spieler2textfeld);
 	s2.setBackground(Color.orange);
-	if(name2 != null)	//Falls bereits ein Objekte spieler2 der Klasse Spieler erzeugt wurde
+	if(Spieler.getListe().contains(Spieler.getSpieler2()))	//Falls bereits ein Objekte spieler2 der Klasse Spieler erzeugt wurde
 	{
 		name2.setText(Spieler.getSpieler2().getName());
 	}
@@ -229,7 +226,7 @@ public Hauptmenue (){
 	s3 = new JCheckBox ();
 	s3.addItemListener(spieler3textfeld);
 	s3.setBackground(Color.pink);
-	if(name3 != null)	//Falls bereits ein Objekte spieler3 der Klasse Spieler erzeugt wurde
+	if(Spieler.getListe().contains(Spieler.getSpieler3()))	//Falls bereits ein Objekte spieler3 der Klasse Spieler erzeugt wurde
 	{
 		name3.setText(Spieler.getSpieler3().getName());
 	}
@@ -242,7 +239,7 @@ public Hauptmenue (){
 	s4 = new JCheckBox ();
 	s4.addItemListener(spieler4textfeld);
 	s4.setBackground(Color.magenta);
-	if(name4 != null)	//Falls bereits ein Objekte spieler4 der Klasse Spieler erzeugt wurde
+	if(Spieler.getListe().contains(Spieler.getSpieler4()))	//Falls bereits ein Objekte spieler4 der Klasse Spieler erzeugt wurde
 	{
 		name4.setText(Spieler.getSpieler4().getName());
 	}
