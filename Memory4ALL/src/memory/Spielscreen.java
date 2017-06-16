@@ -16,10 +16,10 @@ public class Spielscreen extends JFrame {
 	private JMenuBar m;
 	private JPanel spieler1, spieler2, spieler3, spieler4, spielerleiste13, spielerleiste24, buttons, spielfeld;
 	private JButton ngame, rgame, close;
-//	TODO je nach Schwierigkeitsgrad werden bestimmt viele Karten angezeigt
+	// TODO je nach Schwierigkeitsgrad werden bestimmt viele Karten angezeigt
 	private int anzahlSpielkarten, bilderZähler;
 
-	//Nach klick auf eine Karte wird die Karte umgedreht
+	// Nach klick auf eine Karte wird die Karte umgedreht
 	private ActionListener kartenUmdrehen = new ActionListener() {
 
 		@Override
@@ -28,30 +28,30 @@ public class Spielscreen extends JFrame {
 			System.out.println("Drehen");
 		}
 	};
-	
-	//ActionListener buttonListener "Siel neu konfigurieren"
+
+	// ActionListener buttonListener "Siel neu konfigurieren"
 	private ActionListener buttonListenerReset = new ActionListener() {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String cmd = e.getActionCommand();
-				if(cmd.equals("Spiel neu konfigurieren?")) {
-					Hauptmenue hm = new Hauptmenue();
-					hm.setVisible(true);
-//					TODO Spielscreen muss beendet werden
-				}
+			if (cmd.equals("Spiel neu konfigurieren?")) {
+				Hauptmenue hm = new Hauptmenue();
+				hm.setVisible(true);
+				// TODO Spielscreen muss beendet werden
+			}
 		}
 	};
-	
-	//ActionListener buttonListener "Anwedung schlie�en"
+
+	// ActionListener buttonListener "Anwedung schlie�en"
 	private ActionListener buttonListenerClose = new ActionListener() {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String cmd = e.getActionCommand();
-				if(cmd.equals("Anwendung schliessen")) {
-					System.exit(0);
-				}
+			if (cmd.equals("Anwendung schliessen")) {
+				System.exit(0);
+			}
 		}
 	};
 
@@ -89,9 +89,9 @@ public class Spielscreen extends JFrame {
 		ImageIcon schiggi = new ImageIcon(schiggiresize);
 		JLabel schiggibild = new JLabel(schiggi);
 
-//		TODO Dummy-Daten ersetzen
+		// TODO Dummy-Daten ersetzen
 		// Spielerinformationen Spieler 1
-		if(Spieler.getListe().contains(Spieler.getSpieler1())) {
+		if (Spieler.getListe().contains(Spieler.getSpieler1())) {
 			spieler1 = new JPanel(new GridLayout(3, 1));
 			spieler1.add(new JLabel("Spieler 1 : " + Spieler.getSpieler1().getName()));
 			spieler1.add(new JLabel("Zeit : " + Spieler.getSpieler1().getSpielzeit()));
@@ -99,9 +99,9 @@ public class Spielscreen extends JFrame {
 			spieler1.setBackground(Color.red);
 		}
 
-//		TODO Dummy-Daten ersetzen
+		// TODO Dummy-Daten ersetzen
 		// Spielerinformationen Spieler 3
-		if(Spieler.getListe().contains(Spieler.getSpieler3())) {
+		if (Spieler.getListe().contains(Spieler.getSpieler3())) {
 			spieler3 = new JPanel(new GridLayout(3, 1));
 			spieler3.add(new JLabel("Spieler 3: " + Spieler.getSpieler3().getName()));
 			spieler3.add(new JLabel("Zeit: " + Spieler.getSpieler3().getSpielzeit()));
@@ -110,15 +110,23 @@ public class Spielscreen extends JFrame {
 		}
 
 		// Bilderfassung Spieler 3
-		//ImageIcon glumandereinfuegen = new ImageIcon(path + "003-charmander.png");
-		//Image glumandergetter = glumandereinfuegen.getImage();
-		//Image glumanderresize = glumandergetter.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-		//ImageIcon glumander = new ImageIcon(glumanderresize);
+		// ImageIcon glumandereinfuegen = new ImageIcon(path +
+		// "003-charmander.png");
+		// Image glumandergetter = glumandereinfuegen.getImage();
+		// Image glumanderresize = glumandergetter.getScaledInstance(100, 100,
+		// java.awt.Image.SCALE_SMOOTH);
+		// ImageIcon glumander = new ImageIcon(glumanderresize);
 		JLabel glumanderbild = new JLabel(new ImageIcon(path + "001-squirtle2.png"));
-		
 
 		// Zusammenfassung der Spieler 1,3
-		if(Spieler.getListe().contains(Spieler.getSpieler3())) {		//Zusammenfassung geschieht nur, wenn das Objekte "spieler3" erzeugt wurde
+		if (Spieler.getListe().contains(Spieler.getSpieler3())) { // Zusammenfassung
+																	// geschieht
+																	// nur, wenn
+																	// das
+																	// Objekte
+																	// "spieler3"
+																	// erzeugt
+																	// wurde
 			spielerleiste13 = new JPanel(new GridLayout(4, 1));
 			spielerleiste13.add(schiggibild);
 			spielerleiste13.add(spieler1);
@@ -127,7 +135,7 @@ public class Spielscreen extends JFrame {
 		}
 
 		// Zentrales Gaming Feld (Poker-Tisch)
-		ImageIcon tischeinfuegen = new ImageIcon("C:/Users/LennartanDeMeulen/Pictures/Pokemon/image_1407.jpg");
+		ImageIcon tischeinfuegen = new ImageIcon(path + "Spielfeld.jpg");
 		Image tischgetter = tischeinfuegen.getImage();
 		Image tischresize = tischgetter.getScaledInstance(900, 650, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon tisch = new ImageIcon(tischresize);
@@ -140,10 +148,10 @@ public class Spielscreen extends JFrame {
 		// nur fuer Testzwecke
 		JButton spielKarten[] = new JButton[anzahlSpielkarten];
 		JButton spielKartenFront[] = new JButton[anzahlSpielkarten];
-		SpielStein steine[]= new SpielStein[anzahlSpielkarten];
+		SpielStein steine[] = new SpielStein[anzahlSpielkarten];
 
 		for (int i = 0; i < anzahlSpielkarten; i++) {
-			steine[i] = new SpielStein((new ImageIcon(path + i + ".png")), (new ImageIcon(path + "Rueckseite.png")), i);
+			steine[i] = new SpielStein((new ImageIcon(path + 0 + ".png")), (new ImageIcon(path + "Rueckseite.png")), i);
 			spielKarten[i] = new JButton("karte" + steine[i].getIndex());
 			spielfeld.add(spielKarten[i]);
 			spielKarten[i].addActionListener(kartenUmdrehen);
@@ -154,7 +162,7 @@ public class Spielscreen extends JFrame {
 			if (i >= 1 && i % 2 == 0) {
 
 				System.out.println("Nächstes Bild " + i);
-				steine[i].setFront(new ImageIcon(path + bilderZähler + ".png"));
+				//steine[i].setFront(new ImageIcon(path + bilderZähler + ".png"));
 				bilderZähler++;
 				System.out.println(steine[i].getFront().toString());
 
@@ -164,24 +172,24 @@ public class Spielscreen extends JFrame {
 
 		pack();
 
-//		TODO Dummy-Daten ersetzen
+		// TODO Dummy-Daten ersetzen
 		// Spielerinformation Spieler 2
-		if(Spieler.getListe().contains(Spieler.getSpieler2())) { 
+		if (Spieler.getListe().contains(Spieler.getSpieler2())) {
 			spieler2 = new JPanel(new GridLayout(3, 1));
 			spieler2.add(new JLabel("Spieler 2: " + Spieler.getSpieler2().getName()));
 			spieler2.add(new JLabel("Zeit: " + Spieler.getSpieler2().getSpielzeit()));
 			spieler2.add(new Label("Spielzuege: " + Spieler.getSpieler2().getNo_zuege()));
 			spieler2.setBackground(Color.green);
 		}
-		
-//		TODO Dummy-Daten ersetzen
+
+		// TODO Dummy-Daten ersetzen
 		// Spielerinformation Spieler 4
-		if(Spieler.getListe().contains(Spieler.getSpieler4())) {
-		spieler4 = new JPanel(new GridLayout(3, 1));
-		spieler4.add(new JLabel("Spieler 4: " + Spieler.getSpieler4().getName()));
-		spieler4.add(new JLabel("Zeit: " + Spieler.getSpieler4().getSpielzeit()));
-		spieler4.add(new Label("Spielzuege: " + Spieler.getSpieler4().getNo_zuege()));
-		spieler4.setBackground(Color.yellow);
+		if (Spieler.getListe().contains(Spieler.getSpieler4())) {
+			spieler4 = new JPanel(new GridLayout(3, 1));
+			spieler4.add(new JLabel("Spieler 4: " + Spieler.getSpieler4().getName()));
+			spieler4.add(new JLabel("Zeit: " + Spieler.getSpieler4().getSpielzeit()));
+			spieler4.add(new Label("Spielzuege: " + Spieler.getSpieler4().getNo_zuege()));
+			spieler4.setBackground(Color.yellow);
 		}
 
 		// Bilderfassung Spieler 2
@@ -201,13 +209,13 @@ public class Spielscreen extends JFrame {
 		pikachubild.setBackground(Color.yellow);
 
 		// Zusammenfassung Spieler 2,4
-		if(Spieler.getListe().contains(Spieler.getSpieler2())) {
+		if (Spieler.getListe().contains(Spieler.getSpieler2())) {
 			spielerleiste24 = new JPanel(new GridLayout(4, 1));
 			spielerleiste24.add(bisasambild);
 			spielerleiste24.add(spieler2);
 		}
-		
-		if(Spieler.getListe().contains(Spieler.getSpieler4())) {
+
+		if (Spieler.getListe().contains(Spieler.getSpieler4())) {
 			spielerleiste24.add(spieler4);
 			spielerleiste24.add(pikachubild);
 		}
@@ -235,29 +243,40 @@ public class Spielscreen extends JFrame {
 
 		// Layout fuer das Frame
 		getContentPane().add(m, BorderLayout.NORTH);
-		if(Spieler.getListe().contains(Spieler.getSpieler3()))
+		if (Spieler.getListe().contains(Spieler.getSpieler3()))
 			getContentPane().add(spielerleiste13, BorderLayout.WEST);
 		else {
 			getContentPane().add(spieler1, BorderLayout.WEST);
 		}
 		getContentPane().add(spielfeld, BorderLayout.CENTER);
 
-		if(Spieler.getListe().contains(Spieler.getSpieler2()) && Spieler.getListe().contains(Spieler.getSpieler4()))	//Wenn Objekt spierler2 (Klasse Spieler) und Objekt spiler4 (Klasse Spieler) erzeugt wurden
+		if (Spieler.getListe().contains(Spieler.getSpieler2()) && Spieler.getListe().contains(Spieler.getSpieler4())) // Wenn
+																														// Objekt
+																														// spierler2
+																														// (Klasse
+																														// Spieler)
+																														// und
+																														// Objekt
+																														// spiler4
+																														// (Klasse
+																														// Spieler)
+																														// erzeugt
+																														// wurden
 			getContentPane().add(spielerleiste24, BorderLayout.EAST);
 		else {
-			if(Spieler.getListe().contains(Spieler.getSpieler2()))
+			if (Spieler.getListe().contains(Spieler.getSpieler2()))
 				getContentPane().add(spieler2, BorderLayout.EAST);
-			if(Spieler.getListe().contains(Spieler.getSpieler4()))
+			if (Spieler.getListe().contains(Spieler.getSpieler4()))
 				getContentPane().add(spieler2, BorderLayout.EAST);
 		}
-		
+
 		getContentPane().add(buttons, BorderLayout.SOUTH);
 
 		// Weitere Konfigurationen fuer das Frame
 		setVisible(true);
 		setBounds(400, 50, 1100, 750);
 		setResizable(true);
-		}
+	}
 
 	public static void main(String[] args) {
 
