@@ -12,6 +12,7 @@ public class Hauptmenue extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private ItemListener spieler2textfeld = new ItemListener() {
 		@Override
 		public void itemStateChanged (ItemEvent e) {
