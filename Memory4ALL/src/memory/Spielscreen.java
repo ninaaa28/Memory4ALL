@@ -162,7 +162,8 @@ public class Spielscreen extends JFrame {
 			if (i >= 1 && i % 2 == 0) {
 
 				System.out.println("Nächstes Bild " + i);
-				//steine[i].setFront(new ImageIcon(path + bilderZähler + ".png"));
+				// steine[i].setFront(new ImageIcon(path + bilderZähler +
+				// ".png"));
 				bilderZähler++;
 				System.out.println(steine[i].getFront().toString());
 
