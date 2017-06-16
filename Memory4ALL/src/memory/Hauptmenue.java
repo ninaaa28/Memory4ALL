@@ -203,10 +203,10 @@ public Hauptmenue (){
 	m2 = new JMenu("Made by");
 	Impressum = new JMenuItem ("Impressum");
 	Impressum.addActionListener(buttonListenerImpressum);
-	m2.add("Impressum");
-	Kontakt = new JMenuItem ();
+	m2.add(Impressum);
+	Kontakt = new JMenuItem ("Kontakt");
 	Kontakt.addActionListener(buttonListenerKontakt);
-	m2.add("Kontakt");
+	m2.add(Kontakt);
 	m2.setBackground(Color.yellow);
 
 	// Zusammenfassung der Menüleiste
